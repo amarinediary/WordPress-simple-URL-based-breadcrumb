@@ -48,8 +48,43 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          */
         public function get_crumbs() {
 
+            $scheme = $_SERVER['REQUEST_SCHEME'];
+
+            $request = $_SERVER['REQUEST_URI'];
             
+            $host = $_SERVER['HTTP_HOST'];
+
+            if ( str_contains( $request, '?' ) ) {
+
+                $request = substr( $request, 0, strpos( $request, '?' ) );
+    
+            };
+
+            if ( str_ends_with( $request, '/' ) ) {
+
+                $request = explode( '/', substr( $request, 1, -1 ) );
+    
+            } else {
+    
+                $request = explode( '/', substr( $request, 1 ) );
+    
+            }
+
+            var_dump( $request );
+
+            /*
+            $crumbs = array();
+
+            array_push( $crumbs, ( object )
+                array(
+                    'crumb' => $slug,
+                    'url' => $url,
+                )
+            );
             
+            return $crumbs;
+            */
+
         }
 
         /**
