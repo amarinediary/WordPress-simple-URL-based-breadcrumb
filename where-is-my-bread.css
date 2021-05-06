@@ -33,3 +33,13 @@
 .bread ol li a {
 
 }
+
+.🍞 ol li.crumb:last-child
+.bread ol li.crumb:last-child {
+
+}
+
+.🍞 ol li.crumb:last-child a
+.bread ol li.crumb:last-child a {
+
+}
