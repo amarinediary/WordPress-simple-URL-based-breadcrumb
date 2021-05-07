@@ -33,7 +33,7 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          */
         public function __construct() {
 
-            add_action( 'wp', array( $this, 'get_crumbs' ) );
+            add_action( 'wp', [ $this, 'get_crumbs' ] );
 
         }
 
@@ -50,40 +50,24 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
 
             $request = $_SERVER['REQUEST_URI'];
             
-            $localhost = array(
-                '127.0.0.1', 
-                '::1'
-            );
-
-            if ( str_contains( $request, '?' ) ) {
-
+            if ( str_contains( $request, '?' ) )
                 $request = substr( $request, 0, strpos( $request, '?' ) );
-    
-            };
 
-            if ( str_ends_with( $request, '/' ) ) {
+            $request = ( str_ends_with( $request, '/' ) ? explode( '/', substr( $request, 1, -1 ) ) : explode( '/', substr( $request, 1 ) ) );
 
-                $request = explode( '/', substr( $request, 1, -1 ) );
-    
-            } else {
-    
-                $request = explode( '/', substr( $request, 1 ) );
-    
-            };
-
-            $crumbs = array();
+            $crumbs = [];
 
             foreach ( $request as $crumb ) {
 
                 $slug = esc_html( $crumb );
 
-                $url = esc_url( $scheme . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $request ), 0, strpos( implode( '/', $request ), $crumb ) ) );
+                $url = esc_url( $scheme . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $request ), 0, strpos( implode( '/', $request ), $crumb ) ) . $slug );
 
                 array_push( $crumbs, ( object )
-                    array(
+                    [
                         'slug' => $slug,
-                        'url' => $url . $slug,
-                    )
+                        'url' => $url,
+                    ]
                 );
 
             };
@@ -93,19 +77,19 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
         }
 
         /**
-         * Retrieve the bread as a formated crumbs list.
+         * Display the bread as a formated crumbs list.
          *
          * @since 1.0.0
          * 
-         * @param Array $args
+         * @param Array $args Array or string of arguments for retrieving the bread.
          * 
-         * @return Array Formated crumbs list.
+         * @return Array The bread. A formated crumbs list.
          */
         public function get_bread( 
-            $args = array(
+            $args = [
                 'separator' => '>',
                 'offset' => 0,
-            ) 
+            ] 
         ) {
 
             $crumbs = array_slice( $this->get_crumbs(), abs( $args['offset'] ) );
@@ -118,11 +102,8 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
 
                 echo '<li class="crumb"><a href="' . $crumb->url . '">' . $crumb->slug . '</a></li>';
 
-                if ( $i !== sizeof( $crumbs ) && ! empty( $args['separator'] ) ) {
-
+                if ( $i !== sizeof( $crumbs ) && ! empty( $args['separator'] ) )
                     echo '<li>' . $args['separator'] . '</li>';
-
-                };
 
             };
 
