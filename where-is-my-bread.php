@@ -42,12 +42,12 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          *
          * @since 1.0.0
          * 
-         * @return Array Crumbs array.
+         * @return Array The crumbs array.
          */
         public function get_crumbs() {
 
             $flour = $_SERVER['REQUEST_URI'];
-            
+
             if ( str_contains( $flour, '?' ) )
                 $flour = substr( $flour, 0, strpos( $flour, '?' ) );
 
@@ -81,7 +81,7 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          * 
          * @param Array $ingredients Array or string of arguments for retrieving the bread.
          * 
-         * @return Array The bread. A formated crumbs list.
+         * @return Array The bread. The formated crumbs list.
          */
         public function get_bread(
             $ingredients = [
@@ -101,7 +101,7 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
                 $i++;
 
                 echo '<li class="crumb">
-                <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
+                    <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
                 </li>';
 
                 if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
@@ -110,9 +110,9 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
             };
 
             echo '</ol>';
-        
+
         }
-        
+
     };
 
     $where_is_my_bread = new Where_Is_My_Bread();
