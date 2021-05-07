@@ -79,31 +79,33 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          *
          * @since 1.0.0
          * 
-         * @param Array $args Array or string of arguments for retrieving the bread.
+         * @param Array $ingredients Array or string of arguments for retrieving the bread.
          * 
          * @return Array The bread. A formated crumbs list.
          */
         public function get_bread(
-            $args = [
-                'separator' => '>',
-                'offset' => 0,
-                'length' => null,
-                'rtl' => null,
-            ] 
+            $ingredients = [
+                'separator' => '>', // Default to >.
+                'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
+                'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
+                'rtl' => null, // Accept true/null. Append .jam class to .bread class. Overwrite defaul browser RTL. Default to null.
+            ]
         ) {
 
-            $crumbs = array_slice( $this->get_crumbs(), $args['offset'], $args['length'] );
+            $crumbs = array_slice( $this->get_crumbs(), $ingredients['offset'], $ingredients['length'] );
 
-            echo '<ol class="🍞 bread' . ( is_rtl() || $args['rtl'] == true ? ' jam' : '' ) . '">';
+            echo '<ol class="' . ( $ingredients['rtl'] == true || is_rtl() ? '🍞 bread jam' : '🍞 bread' ) . '">';
 
             $i = 0;
             foreach ( $crumbs as $crumb ) {
                 $i++;
 
-                echo '<li class="crumb"><a href="' . $crumb->url . '">' . $crumb->slug . '</a></li>';
+                echo '<li class="crumb">
+                <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
+                </li>';
 
-                if ( $i !== sizeof( $crumbs ) && ! empty( $args['separator'] ) )
-                    echo '<li>' . $args['separator'] . '</li>';
+                if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
+                    echo '<li>' . $ingredients['separator'] . '</li>';
 
             };
 
