@@ -46,22 +46,20 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          */
         public function get_crumbs() {
 
-            $scheme = $_SERVER['REQUEST_SCHEME'];
-
-            $request = $_SERVER['REQUEST_URI'];
+            $flour = $_SERVER['REQUEST_URI'];
             
-            if ( str_contains( $request, '?' ) )
-                $request = substr( $request, 0, strpos( $request, '?' ) );
+            if ( str_contains( $flour, '?' ) )
+                $flour = substr( $flour, 0, strpos( $flour, '?' ) );
 
-            $request = ( str_ends_with( $request, '/' ) ? explode( '/', substr( $request, 1, -1 ) ) : explode( '/', substr( $request, 1 ) ) );
+            $flour = ( str_ends_with( $flour, '/' ) ? explode( '/', substr( $flour, 1, -1 ) ) : explode( '/', substr( $flour, 1 ) ) );
 
             $crumbs = [];
 
-            foreach ( $request as $crumb ) {
+            foreach ( $flour as $crumb ) {
 
                 $slug = esc_html( $crumb );
 
-                $url = esc_url( $scheme . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $request ), 0, strpos( implode( '/', $request ), $crumb ) ) . $slug );
+                $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $slug );
 
                 array_push( $crumbs, ( object )
                     [
@@ -85,16 +83,18 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          * 
          * @return Array The bread. A formated crumbs list.
          */
-        public function get_bread( 
+        public function get_bread(
             $args = [
                 'separator' => '>',
                 'offset' => 0,
+                'length' => null,
+                'rtl' => null,
             ] 
         ) {
 
-            $crumbs = array_slice( $this->get_crumbs(), abs( $args['offset'] ) );
+            $crumbs = array_slice( $this->get_crumbs(), $args['offset'], $args['length'] );
 
-            echo '<ol class="🍞 bread">';
+            echo '<ol class="🍞 bread' . ( is_rtl() || $args['rtl'] == true ? ' jam' : '' ) . '">';
 
             $i = 0;
             foreach ( $crumbs as $crumb ) {
