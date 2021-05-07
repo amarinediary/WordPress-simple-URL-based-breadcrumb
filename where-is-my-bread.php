@@ -35,8 +35,6 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
 
             add_action( 'wp', array( $this, 'get_crumbs' ) );
 
-            add_action( 'wp', array( $this, 'get_past_crumb' ) );
-
         }
 
         /**
@@ -52,7 +50,10 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
 
             $request = $_SERVER['REQUEST_URI'];
             
-            $host = $_SERVER['HTTP_HOST'];
+            $localhost = array(
+                '127.0.0.1', 
+                '::1'
+            );
 
             if ( str_contains( $request, '?' ) ) {
 
@@ -68,22 +69,26 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
     
                 $request = explode( '/', substr( $request, 1 ) );
     
-            }
+            };
 
-            var_dump( $request );
-
-            /*
             $crumbs = array();
 
-            array_push( $crumbs, ( object )
-                array(
-                    'crumb' => $slug,
-                    'url' => $url,
-                )
-            );
-            
-            return $crumbs;
-            */
+            foreach ( $request as $crumb ) {
+
+                $slug = esc_html( $crumb );
+
+                $url = esc_url( $scheme . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $request ), 0, strpos( implode( '/', $request ), $crumb ) ) );
+
+                array_push( $crumbs, ( object )
+                    array(
+                        'slug' => $slug,
+                        'url' => $url . $slug,
+                    )
+                );
+
+            };
+
+            return( $crumbs );
 
         }
 
@@ -92,36 +97,36 @@ if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
          *
          * @since 1.0.0
          * 
-         * @return Array Crumbs list.
+         * @param Array $args
+         * 
+         * @return Array Formated crumbs list.
          */
-        public function get_bread() {
-        
-            return '<ol class="🍞 bread">';
+        public function get_bread( 
+            $args = array(
+                'separator' => '>',
+                'offset' => 0,
+            ) 
+        ) {
 
-            $crumbs = $this->get_crumbs();
+            $crumbs = array_slice( $this->get_crumbs(), abs( $args['offset'] ) );
 
+            echo '<ol class="🍞 bread">';
+
+            $i = 0;
             foreach ( $crumbs as $crumb ) {
+                $i++;
 
-                return '<li class="crumb"><a href="' . $crumb->url . '">' . $crumb->slug . '</a></li>';
+                echo '<li class="crumb"><a href="' . $crumb->url . '">' . $crumb->slug . '</a></li>';
+
+                if ( $i !== sizeof( $crumbs ) && ! empty( $args['separator'] ) ) {
+
+                    echo '<li>' . $args['separator'] . '</li>';
+
+                };
 
             };
 
-            return '</ol>' . $args->after_ol . '';
-        
-        }
-        
-        /**
-         * Retrieve past crumb slug|URL.
-         *
-         * @since 1.0.0
-         * 
-         * @param String Accept either slug|URL.
-         * 
-         * @return String Previous crumb slug|URL.
-         */
-        public function get_past_crumb() {
-        
-
+            echo '</ol>';
         
         }
         
