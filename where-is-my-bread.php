@@ -25,15 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'get_crumbs' ) ) {
 
     /**
-     * Retrieve the bread, a formated crumbs list.
+     * Retrieve the crumbs.
      * 
      * @since 1.0.0
-     * 
-     * @param Array $ingredients[separator] The crumb's separator. Default to &gt;.
-     * @param Array $ingredients[offset] Crumbs offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
-     * @param Array $ingredients[length] Crumbs length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
-     * 
-     * @return Array Formated crumbs list.
+     *
+     * @return Array Crumbs array.
      */
     function get_crumbs() {
 
