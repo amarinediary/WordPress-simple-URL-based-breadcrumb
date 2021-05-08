@@ -82,9 +82,12 @@ if ( ! function_exists( 'the_bread' ) ) {
             'offset' => 0,
             'length' => null,
         ]
-    ) {
+    ) { 
 
-        $crumbs = array_slice( get_the_crumbs(), $ingredients['offset'], $ingredients['length'] );
+        $offset =  ( empty( $ingredients['offset'] ) ? 0 : $ingredients['offset'] );
+        $length =  ( empty( $ingredients['length'] ) ? null : $ingredients['length'] );
+        
+        $crumbs = array_slice( get_the_crumbs(), $offset, $length );
 
         echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
