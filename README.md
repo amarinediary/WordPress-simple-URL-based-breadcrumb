@@ -16,7 +16,7 @@ A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based b
  *
  * @return Array Crumbs array.
  */
-get_crumbs()
+get_crumbs();
 ```
 
 ## Retrieve the bread, a formated crumbs list.
@@ -29,14 +29,23 @@ get_crumbs()
  * 
  * @since 1.0.0
  * 
- * @param Array $ingredients[separator] The crumb's separator. Default to &gt;.
+ * @param Array $ingredients[separator] The crumb's separator. Default to >.
  * @param Array $ingredients[offset] Crumbs offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
  * @param Array $ingredients[length] Crumbs length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
  * 
  * @return Array Formated crumbs list.
  */
-get_bread( array $ingredients = array() )
+get_bread( array $ingredients = array() );
 ```
+
+### Parameters
+
+|Parameter|Description|
+|-|-|
+|`$ingredients`||
+|`'separator'`|The crumb's separator. Default to `>`.|
+|`'offset'`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.|
+|`'length'`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.|
 
 ### HTML5 structure output
 
