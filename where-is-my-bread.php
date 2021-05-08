@@ -29,7 +29,6 @@ if ( ! function_exists( 'get_bread' ) ) {
             'separator' => '>', // Default to >.
             'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
             'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
-            'rtl' => null, // Accept true/null. Append .jam class to .bread class. Overwrite defaul browser RTL. Default to null.
         ]
     ) {
 
@@ -50,8 +49,8 @@ if ( ! function_exists( 'get_bread' ) ) {
 
             array_push( $crumbs, ( object )
                 [
-                'slug' => $slug,
-                'url' => $url,
+                    'slug' => $slug,
+                    'url' => $url,
                 ]
             );
 
@@ -59,7 +58,7 @@ if ( ! function_exists( 'get_bread' ) ) {
 
         $crumbs = array_slice( $crumbs, $ingredients['offset'], $ingredients['length'] );
 
-        echo '<ol class="' . ( $ingredients['rtl'] == true || is_rtl() ? '🍞 bread jam' : '🍞 bread' ) . '">';
+        echo '<ol class="🍞 bread">';
 
         $i = 0;
         foreach ( $crumbs as $crumb ) {
