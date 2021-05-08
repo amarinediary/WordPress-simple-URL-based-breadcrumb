@@ -16,7 +16,7 @@ A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based b
  *
  * @return Array Crumbs array.
  */
-get_crumbs();
+get_the_crumbs();
 ```
 
 ## Retrieve the bread, a formated crumbs list.
@@ -35,7 +35,7 @@ get_crumbs();
  * 
  * @return Array Formated crumbs list.
  */
-get_bread( array $ingredients = array() );
+the_bread( array $ingredients = array() );
 ```
 
 ### Parameters
@@ -50,7 +50,13 @@ get_bread( array $ingredients = array() );
 ### Example
 
 ```php
+<?php
 
+$ingredients = [
+    'separator' => '→',
+];
+
+the_bread( $ingredients );
 ```
 
 ### HTML5 structure output
