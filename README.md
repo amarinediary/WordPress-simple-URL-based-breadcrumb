@@ -19,13 +19,13 @@ A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based b
 get_the_crumbs();
 ```
 
-## Retrieve the bread, a formated crumbs list.
+## Display the bread, a formated crumbs list.
 
 ```php
 <?php
 
 /**
- * Retrieve the bread, a formated crumbs list.
+ * Display the bread, a formated crumbs list.
  * 
  * @since 1.0.0
  * 
