@@ -32,8 +32,7 @@ A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based b
             <span itemprop="name">Bread</span>
         </a>
         <meta itemprop="position" content="4">
-    </li>    
-    <li>&gt;</li>
+    </li>
 </ol>
 ```
 
