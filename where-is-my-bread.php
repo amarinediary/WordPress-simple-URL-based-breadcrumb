@@ -22,16 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * GitHub Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * GitHub Branch: main
  */
-
-/**
- * Display the bread as a formated crumbs list.
- *
- * @since 1.0.0
- * 
- * @param Array $ingredients Array or string of arguments for retrieving the bread. A formated crumbs list.
- * 
- * @return Array The bread. The formated crumbs list.
- */
 if ( ! function_exists( 'get_bread' ) ) {
 
     function get_bread(
@@ -73,7 +63,7 @@ if ( ! function_exists( 'get_bread' ) ) {
 
         $i = 0;
         foreach ( $crumbs as $crumb ) {
-        $i++;
+            $i++;
 
             echo '<li class="crumb">
                 <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
