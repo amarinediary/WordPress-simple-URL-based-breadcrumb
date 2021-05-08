@@ -63,22 +63,22 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
 };
 
-if ( ! function_exists( 'get_the_bread' ) ) {
+if ( ! function_exists( 'the_bread' ) ) {
 
     /**
-     * Retrieve the bread, a formated crumbs list.
+     * Display the bread, a formated crumbs list.
      * 
      * @since 1.0.0
      * 
-     * @param Array $ingredients[separator] The crumb's separator. Default to &gt;.
+     * @param Array $ingredients[separator] The crumb's separator. Default to >.
      * @param Array $ingredients[offset] Crumbs offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
      * @param Array $ingredients[length] Crumbs length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
      * 
      * @return Array Formated crumbs list.
      */
-    function get_the_bread(
+    function the_bread(
         $ingredients = [
-            'separator' => '&gt;',
+            'separator' => '>',
             'offset' => 0,
             'length' => null,
         ]
@@ -86,13 +86,13 @@ if ( ! function_exists( 'get_the_bread' ) ) {
 
         $crumbs = array_slice( get_the_crumbs(), $ingredients['offset'], $ingredients['length'] );
 
-        return '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
+        echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
         $i = 0;
         foreach ( $crumbs as $crumb ) {
             $i++;
 
-            return '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="' . $crumb->url . '">
                     <span itemprop="name">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</span>
                 </a>
@@ -100,11 +100,11 @@ if ( ! function_exists( 'get_the_bread' ) ) {
             </li>';
 
             if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
-                return $ingredients['separator'];
+                echo $ingredients['separator'];
 
         };
 
-        return '</ol>';
+        echo '</ol>';
 
     };
 
