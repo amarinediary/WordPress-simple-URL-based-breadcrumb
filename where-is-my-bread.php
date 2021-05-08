@@ -24,15 +24,24 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 /**
- * Retrieve all crumbs.
+ * Display the bread as a formated crumbs list.
  *
  * @since 1.0.0
  * 
- * @return Array The crumbs array.
+ * @param Array $ingredients Array or string of arguments for retrieving the bread. A formated crumbs list.
+ * 
+ * @return Array The bread. The formated crumbs list.
  */
-if ( ! function_exists( 'get_crumbs' ) ) {
+if ( ! function_exists( 'get_bread' ) ) {
 
-    function get_crumbs() {
+    function get_bread(
+        $ingredients = [
+            'separator' => '>', // Default to >.
+            'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
+            'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
+            'rtl' => null, // Accept true/null. Append .jam class to .bread class. Overwrite defaul browser RTL. Default to null.
+        ]
+    ) {
 
         $flour = $_SERVER['REQUEST_URI'];
 
@@ -58,33 +67,7 @@ if ( ! function_exists( 'get_crumbs' ) ) {
 
         };
 
-        return( $crumbs );
-
-    };
-
-};
-
-/**
- * Display the bread as a formated crumbs list.
- *
- * @since 1.0.0
- * 
- * @param Array $ingredients Array or string of arguments for retrieving the bread. A formated crumbs list.
- * 
- * @return Array The bread. The formated crumbs list.
- */
-if ( ! function_exists( 'get_bread' ) ) {
-
-    function get_bread(
-        $ingredients = [
-            'separator' => '>', // Default to >.
-            'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
-            'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
-            'rtl' => null, // Accept true/null. Append .jam class to .bread class. Overwrite defaul browser RTL. Default to null.
-        ]
-    ) {
-
-        $crumbs = array_slice( get_crumbs(), $ingredients['offset'], $ingredients['length'] );
+        $crumbs = array_slice( $crumbs, $ingredients['offset'], $ingredients['length'] );
 
         echo '<ol class="' . ( $ingredients['rtl'] == true || is_rtl() ? '🍞 bread jam' : '🍞 bread' ) . '">';
 
