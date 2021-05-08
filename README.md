@@ -30,8 +30,8 @@ get_the_crumbs();
  * @since 1.0.0
  * 
  * @param Array $ingredients[separator] The crumb's separator. Default to >.
- * @param Array $ingredients[offset] Crumbs offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
- * @param Array $ingredients[length] Crumbs length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
+ * @param Array $ingredients[offset] Crumbs array offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
+ * @param Array $ingredients[length] Crumbs array length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
  * 
  * @return Array Formated crumbs list.
  */
