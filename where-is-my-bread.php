@@ -24,11 +24,22 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 if ( ! function_exists( 'get_bread' ) ) {
 
+    /**
+     * Retrieve the bread, a formated crumbs list.
+     * 
+     * @since 1.0.0
+     * 
+     * @param Array $ingredients[separator] The crumb's separator. Default to &gt;.
+     * @param Array $ingredients[offset] Crumbs offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
+     * @param Array $ingredients[length] Crumbs length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
+     * 
+     * @return Array Formated crumbs list.
+     */
     function get_bread(
         $ingredients = [
-            'separator' => '>', // Default to >.
-            'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
-            'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
+            'separator' => '&gt;',
+            'offset' => 0,
+            'length' => null,
         ]
     ) {
 
@@ -45,7 +56,7 @@ if ( ! function_exists( 'get_bread' ) ) {
 
             $slug = esc_html( $crumb );
 
-            $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $slug );
+            $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $crumb. '/' );
 
             array_push( $crumbs, ( object )
                 [
@@ -58,18 +69,21 @@ if ( ! function_exists( 'get_bread' ) ) {
 
         $crumbs = array_slice( $crumbs, $ingredients['offset'], $ingredients['length'] );
 
-        echo '<ol class="🍞 bread">';
+        echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
         $i = 0;
         foreach ( $crumbs as $crumb ) {
             $i++;
 
-            echo '<li class="crumb">
-                <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
+            echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="' . $crumb->url . '">
+                    <span itemprop="name">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</span>
+                </a>
+                <meta itemprop="position" content="' . $i . '">
             </li>';
 
             if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
-                echo '<li>' . $ingredients['separator'] . '</li>';
+                echo $ingredients['separator'];
 
         };
 
@@ -78,3 +92,5 @@ if ( ! function_exists( 'get_bread' ) ) {
     };
 
 };
+
+
