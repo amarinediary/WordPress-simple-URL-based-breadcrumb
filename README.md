@@ -50,7 +50,7 @@ the_bread( array $ingredients = array() );
 
 |Parameter|Description|
 |-|-|
-|`$ingredients`||
+|`$ingredients`|(Optional) Array of arguments for displaying the bread.|
 |`'separator'`|The crumb's separator. Default to `>`.|
 |`'offset'`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.|
 |`'length'`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.|
