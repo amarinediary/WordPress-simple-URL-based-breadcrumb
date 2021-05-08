@@ -19,6 +19,14 @@ A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based b
 get_the_crumbs();
 ```
 
+### Example
+
+```php
+<?php
+
+var_dump( get_the_crumbs() );
+```
+
 ## Display the bread, a formated crumbs list.
 
 ```php
