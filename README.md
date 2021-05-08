@@ -90,21 +90,21 @@ the_bread( $ingredients );
         </a>
         <meta itemprop="position" content="1">
     </li>
-    &gt;
+    >
     <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="http://example.com/where/is/">
             <span itemprop="name">Is</span>
         </a>
         <meta itemprop="position" content="2">
     </li>
-    &gt;
+    >
     <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="http://example.com/where/is/my/">
             <span itemprop="name">My</span>
         </a>
         <meta itemprop="position" content="3">
     </li>         
-    &gt;
+    >
     <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="http://example.com/where/is/my/bread/">
             <span itemprop="name">Bread</span>
