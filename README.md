@@ -52,9 +52,9 @@ the_bread( array $ingredients = array() );
 ```php
 <?php
 
-$ingredients = [
+$ingredients = array(
     'separator' => '→',
-];
+);
 
 the_bread( $ingredients );
 ```
