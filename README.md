@@ -1,7 +1,68 @@
-# Where Is My Bread 🍞
+# Where-Is-My-Bread 🍞
 
-A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where Is My Bread 🍞 is a plug-and-play plugin with no required configuration.
+A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where-Is-My-Bread is a plug-and-play plugin with no required configuration.
 
-[![Infinite Energy Generator](https://img.youtube.com/vi/jk3xBhqcjqY/0.jpg)](https://www.youtube.com/watch?v=jk3xBhqcjqY)
+## HTML5 structure output
 
-## Add jam to your bread and make it RTL
+```php
+<ol class="🍞 bread" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+    <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="http://example.com/where/">
+            <span itemprop="name">Where</span>
+        </a>
+        <meta itemprop="position" content="1">
+    </li>
+    <li>&gt;</li>
+    <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="http://example.com/where/is/">
+            <span itemprop="name">Is</span>
+        </a>
+        <meta itemprop="position" content="2">
+    </li>
+    <li>&gt;</li>
+    <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="http://example.com/where/is/my/">
+            <span itemprop="name">My</span>
+        </a>
+        <meta itemprop="position" content="3">
+    </li>         
+    <li>&gt;</li>
+    <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="http://example.com/where/is/my/bread/">
+            <span itemprop="name">Bread</span>
+        </a>
+        <meta itemprop="position" content="4">
+    </li>    
+    <li>&gt;</li>
+</ol>
+```
+
+## Styling
+
+By default Where-Is-My-Bread has no associated stylesheet, but has two associated css classes.
+
+- The `<ol>` tag comes with the css class, `🍞` or `bread`.
+- Each `<li>` tag comes with the class, `crumb`.
+
+## Minimal css boilerplate (Optional)
+
+```
+.🍞,
+.bread {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+.🍞 li,
+.bread li {
+  display:inline-block;
+}
+
+.🍞 li.crumb:last-child a,
+.bread li.crumb:last-child a {
+  text-decoration: none;
+  pointer-events: none;
+  color: inherit;
+}
+```
