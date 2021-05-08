@@ -22,99 +22,87 @@ if ( ! defined( 'ABSPATH' ) ) {
  * GitHub Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * GitHub Branch: main
  */
-if ( ! class_exists( 'Where_Is_My_Bread' ) ) {
 
-    class Where_Is_My_Bread {
+/**
+ * Retrieve all crumbs.
+ *
+ * @since 1.0.0
+ * 
+ * @return Array The crumbs array.
+ */
+if ( ! function_exists( 'get_crumbs' ) ) {
 
-        /**
-         * Hooks methods to actions.
-         *
-         * @since 1.0.0
-         */
-        public function __construct() {
+    function get_crumbs() {
 
-            add_action( 'wp', [ $this, 'get_crumbs' ] );
+        $flour = $_SERVER['REQUEST_URI'];
 
-        }
+        if ( str_contains( $flour, '?' ) )
+            $flour = substr( $flour, 0, strpos( $flour, '?' ) );
 
-        /**
-         * Retrieve all crumbs.
-         *
-         * @since 1.0.0
-         * 
-         * @return Array The crumbs array.
-         */
-        public function get_crumbs() {
+        $flour = ( str_ends_with( $flour, '/' ) ? explode( '/', substr( $flour, 1, -1 ) ) : explode( '/', substr( $flour, 1 ) ) );
 
-            $flour = $_SERVER['REQUEST_URI'];
+        $crumbs = [];
 
-            if ( str_contains( $flour, '?' ) )
-                $flour = substr( $flour, 0, strpos( $flour, '?' ) );
+        foreach ( $flour as $crumb ) {
 
-            $flour = ( str_ends_with( $flour, '/' ) ? explode( '/', substr( $flour, 1, -1 ) ) : explode( '/', substr( $flour, 1 ) ) );
+            $slug = esc_html( $crumb );
 
-            $crumbs = [];
+            $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $slug );
 
-            foreach ( $flour as $crumb ) {
+            array_push( $crumbs, ( object )
+                [
+                'slug' => $slug,
+                'url' => $url,
+                ]
+            );
 
-                $slug = esc_html( $crumb );
+        };
 
-                $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $slug );
-
-                array_push( $crumbs, ( object )
-                    [
-                        'slug' => $slug,
-                        'url' => $url,
-                    ]
-                );
-
-            };
-
-            return( $crumbs );
-
-        }
-
-        /**
-         * Display the bread as a formated crumbs list.
-         *
-         * @since 1.0.0
-         * 
-         * @param Array $ingredients Array or string of arguments for retrieving the bread.
-         * 
-         * @return Array The bread. The formated crumbs list.
-         */
-        public function get_bread(
-            $ingredients = [
-                'separator' => '>', // Default to >.
-                'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
-                'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
-                'rtl' => null, // Accept true/null. Append .jam class to .bread class. Overwrite defaul browser RTL. Default to null.
-            ]
-        ) {
-
-            $crumbs = array_slice( $this->get_crumbs(), $ingredients['offset'], $ingredients['length'] );
-
-            echo '<ol class="' . ( $ingredients['rtl'] == true || is_rtl() ? '🍞 bread jam' : '🍞 bread' ) . '">';
-
-            $i = 0;
-            foreach ( $crumbs as $crumb ) {
-                $i++;
-
-                echo '<li class="crumb">
-                    <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
-                </li>';
-
-                if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
-                    echo '<li>' . $ingredients['separator'] . '</li>';
-
-            };
-
-            echo '</ol>';
-
-        }
+        return( $crumbs );
 
     };
 
-    $where_is_my_bread = new Where_Is_My_Bread();
+};
+
+/**
+ * Display the bread as a formated crumbs list.
+ *
+ * @since 1.0.0
+ * 
+ * @param Array $ingredients Array or string of arguments for retrieving the bread. A formated crumbs list.
+ * 
+ * @return Array The bread. The formated crumbs list.
+ */
+if ( ! function_exists( 'get_bread' ) ) {
+
+    function get_bread(
+        $ingredients = [
+            'separator' => '>', // Default to >.
+            'offset' => 0, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to 0.
+            'length' => null, // Accept positive/negative Integer. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php. Default to null.
+            'rtl' => null, // Accept true/null. Append .jam class to .bread class. Overwrite defaul browser RTL. Default to null.
+        ]
+    ) {
+
+        $crumbs = array_slice( get_crumbs(), $ingredients['offset'], $ingredients['length'] );
+
+        echo '<ol class="' . ( $ingredients['rtl'] == true || is_rtl() ? '🍞 bread jam' : '🍞 bread' ) . '">';
+
+        $i = 0;
+        foreach ( $crumbs as $crumb ) {
+        $i++;
+
+            echo '<li class="crumb">
+                <a href="' . $crumb->url . '">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</a>
+            </li>';
+
+            if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
+                echo '<li>' . $ingredients['separator'] . '</li>';
+
+        };
+
+        echo '</ol>';
+
+    };
 
 };
