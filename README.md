@@ -2,7 +2,9 @@
 
 ## Description
 
-A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where-Is-My-Bread is a plug-and-play plugin with no required configuration.
+URL based breadcrumb, unstyled, minimalist and SEO friendly.
+
+Where-Is-My-Bread is a non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where-Is-My-Bread is a plug-and-play plugin with no required configuration.
 
 ## Retrieve the crumbs.
 
