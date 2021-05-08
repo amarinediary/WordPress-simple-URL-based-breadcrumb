@@ -39,12 +39,12 @@ A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based b
 
 ## Styling
 
-By default Where-Is-My-Bread has no associated stylesheet, but has two associated css classes.
+By default Where-Is-My-Bread has no associated stylesheet, but has two associated css classes:
 
 - The `<ol>` tag comes with the css class, `🍞` or `bread` *(fallback)*.
 - Each `<li>` tag comes with the class, `crumb`.
 
-## Minimal css boilerplate (Optional)
+### Minimal css boilerplate (Optional)
 
 ```
 .🍞,
