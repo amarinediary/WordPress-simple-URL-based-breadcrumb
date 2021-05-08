@@ -82,7 +82,7 @@ the_bread( $ingredients );
 
 ### HTML5 structure output
 
-```php
+```html
 <ol class="🍞 bread" itemscope="" itemtype="https://schema.org/BreadcrumbList">
     <li class="crumb" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="http://example.com/where/">
