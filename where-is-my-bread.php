@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * GitHub Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * GitHub Branch: main
  */
-if ( ! function_exists( 'get_bread' ) ) {
+if ( ! function_exists( 'get_crumbs' ) ) {
 
     /**
      * Retrieve the bread, a formated crumbs list.
@@ -35,13 +35,7 @@ if ( ! function_exists( 'get_bread' ) ) {
      * 
      * @return Array Formated crumbs list.
      */
-    function get_bread(
-        $ingredients = [
-            'separator' => '&gt;',
-            'offset' => 0,
-            'length' => null,
-        ]
-    ) {
+    function get_crumbs() {
 
         $flour = $_SERVER['REQUEST_URI'];
 
@@ -67,7 +61,34 @@ if ( ! function_exists( 'get_bread' ) ) {
 
         };
 
-        $crumbs = array_slice( $crumbs, $ingredients['offset'], $ingredients['length'] );
+        return $crumbs;
+
+    };
+
+};
+
+if ( ! function_exists( 'get_bread' ) ) {
+
+    /**
+     * Retrieve the bread, a formated crumbs list.
+     * 
+     * @since 1.0.0
+     * 
+     * @param Array $ingredients[separator] The crumb's separator. Default to &gt;.
+     * @param Array $ingredients[offset] Crumbs offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
+     * @param Array $ingredients[length] Crumbs length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
+     * 
+     * @return Array Formated crumbs list.
+     */
+    function get_bread(
+        $ingredients = [
+            'separator' => '&gt;',
+            'offset' => 0,
+            'length' => null,
+        ]
+    ) {
+
+        $crumbs = array_slice( get_crumbs(), $ingredients['offset'], $ingredients['length'] );
 
         echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
