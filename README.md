@@ -55,13 +55,26 @@ the_bread( array $ingredients = array() );
 |`'offset'`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 |`'length'`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 
-### Example
+### Example: The breadcrumb with a custom separator
 
 ```php
 <?php
 
 $ingredients = array(
     'separator' => '→',
+);
+
+the_bread( $ingredients );
+```
+
+### Example: Displaying only the last 3 crumbs
+
+```php
+<?php
+
+$ingredients = array(
+    'offset' => -3,
+    'length' => 3,
 );
 
 the_bread( $ingredients );
