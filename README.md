@@ -47,6 +47,12 @@ get_bread( array $ingredients = array() );
 |`'offset'`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.|
 |`'length'`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.|
 
+### Example
+
+```php
+
+```
+
 ### HTML5 structure output
 
 ```php
