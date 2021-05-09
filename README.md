@@ -8,9 +8,9 @@ URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. Where-Is-
 
 Crumbs are slugs in-between the host domain name and the start start of the URL parameters defined by `?` character. 
 
-> eg: [https://example.com/where/are/my/crumbs/?s=searchingforsomething&color=blue](#!)
+> eg: [https://example.com/where/is/my/bread/?s=searchingforsomething&color=blue](#!)
 
-In this case crumbs are: "`Where`", "`Are`", "`My`", "`Crumbs`".
+In this case crumbs are: "`Where`", "`Is`", "`My`", "`Bread`".
 
 ```php
 <?php
