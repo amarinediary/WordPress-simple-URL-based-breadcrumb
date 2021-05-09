@@ -4,35 +4,6 @@
 
 URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. Where-Is-My-Bread is a non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where-Is-My-Bread is a plug-and-play plugin with no required configuration.
 
-## Retrieving the crumbs.
-
-Crumbs are slugs in-between the host domain name and the start start of the URL parameters defined by `?` character. 
-
-> eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
-
-In this case crumbs are: "`Where`", "`Is`", "`My`", "`Bread`".
-
-```php
-<?php
-
-/**
- * Retrieve the crumbs.
- * 
- * @since 1.0.0
- *
- * @return Array Crumbs array.
- */
-get_the_crumbs();
-```
-
-### Example: Ouputing the crumbs object
-
-```php
-<?php
-
-var_dump( get_the_crumbs() );
-```
-
 ## Displaying the bread, a formated crumbs list.
 
 ```php
@@ -148,4 +119,33 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
   pointer-events: none;
   color: inherit;
 }
+```
+
+## Retrieving the crumbs.
+
+Crumbs are slugs in-between the host domain name and the start start of the URL parameters defined by `?` character. 
+
+> eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
+
+In this case crumbs are: "`Where`", "`Is`", "`My`", "`Bread`".
+
+```php
+<?php
+
+/**
+ * Retrieve the crumbs.
+ * 
+ * @since 1.0.0
+ *
+ * @return Array Crumbs array.
+ */
+get_the_crumbs();
+```
+
+### Example: Ouputing the crumbs object
+
+```php
+<?php
+
+var_dump( get_the_crumbs() );
 ```
