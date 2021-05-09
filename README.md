@@ -4,30 +4,7 @@
 
 URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. Where-Is-My-Bread is a non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where-Is-My-Bread is a plug-and-play plugin with no required configuration.
 
-## Retrieve the crumbs.
-
-```php
-<?php
-
-/**
- * Retrieve the crumbs.
- * 
- * @since 1.0.0
- *
- * @return Array Crumbs array.
- */
-get_the_crumbs();
-```
-
-### Example
-
-```php
-<?php
-
-var_dump( get_the_crumbs() );
-```
-
-## Display the bread, a formated crumbs list.
+## Displaying the bread, a formated crumbs list.
 
 ```php
 <?php
@@ -53,7 +30,7 @@ the_bread( array $ingredients = array() );
 |`$ingredients`|(Optional) Array of arguments for displaying the bread.|
 |`'separator'`|The crumb's separator. Default to `>`.|
 |`'offset'`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
-|`'length'`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
+|`'length'`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 
 ### Example: The breadcrumb with a custom separator
 
@@ -79,6 +56,10 @@ $ingredients = array(
 
 the_bread( $ingredients );
 ```
+
+### Post and page title handling
+
+In some cases, for example, when using apostrophes in posts or pages titles, the crumb might not reflect the actual title. Using the [`url_to_postid()`](https://developer.wordpress.org/reference/functions/url_to_postid/) function in conjonction with the [`get_the_title()`](https://developer.wordpress.org/reference/functions/get_the_title/) function, we can convert the crumb URL into it's matching post or page tile. This is automatically handled by `the_bread()` function.
 
 ### HTML5 structure output
 
@@ -142,4 +123,35 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
   pointer-events: none;
   color: inherit;
 }
+```
+
+## Retrieving the crumbs.
+
+Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
+
+Crumbs are slugs in-between the host domain name and the start start of the URL parameters defined by `?` character. 
+
+> eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
+
+In this case crumbs are: "`Where`", "`Is`", "`My`", "`Bread`".
+
+```php
+<?php
+
+/**
+ * Retrieve the crumbs.
+ * 
+ * @since 1.0.0
+ *
+ * @return Array Crumbs array.
+ */
+get_the_crumbs();
+```
+
+### Example: Ouputing the crumbs object
+
+```php
+<?php
+
+var_dump( get_the_crumbs() );
 ```
