@@ -4,13 +4,13 @@
 
 URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. Where-Is-My-Bread is a non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Where-Is-My-Bread is a plug-and-play plugin with no required configuration.
 
-## Displaying the bread, a formated crumbs list.
+## Displaying the bread, a formatted crumbs list.
 
 ```php
 <?php
 
 /**
- * Display the bread, a formated crumbs list.
+ * Display the bread, a formatted crumbs list.
  * 
  * @since 1.0.0
  * 
@@ -18,7 +18,7 @@ URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. Where-Is-
  * @param Array $ingredients[offset] Crumbs array offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
  * @param Array $ingredients[length] Crumbs array length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
  * 
- * @return Array Formated crumbs list.
+ * @return Array The formatted crumbs list.
  */
 the_bread( array $ingredients = array() );
 ```
