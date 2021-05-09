@@ -59,7 +59,7 @@ the_bread( $ingredients );
 
 ### Post and page title handling
 
-In some cases, when using apostrophes in posts or pages titles, the crumb might not be accurate. We decided to use the `url_to_postid()` function, which convert the crumb URL into it's matching post or page tile.
+In some cases, for example, when using apostrophes in posts or pages titles, the crumb might not reflect the actual title. Using the [`url_to_postid()`](https://developer.wordpress.org/reference/functions/url_to_postid/) function in conjonction with the [`get_the_title()`](https://developer.wordpress.org/reference/functions/get_the_title/) function, we can convert the crumb URL into it's matching post or page tile.
 
 ### HTML5 structure output
 
