@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin Name: Where Is My Bread 🍞
  * Text Domain: where-is-my-bread
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
- * Description: A non-invasive, lightweight WordPress plugin adding url based breadcrumb support. Where Is My Bread 🍞 is a plug-and-play plugin with no required configuration.
+ * Description: Where-Is-My-Bread 🍞 is a URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Plug-and-play plugin, no required configuration.
  * Version: 1.0.0
  * Requires at least: 5.6.0
  * Requires PHP: 8.0
@@ -22,6 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * GitHub Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * GitHub Branch: main
  */
+
+if ( version_compare( PHP_VERSION, '8.0.0', '<' ) ) {
+
+    return;
+
+};
+
 if ( ! function_exists( 'get_the_crumbs' ) ) {
 
     /**
