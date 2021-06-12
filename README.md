@@ -21,7 +21,7 @@ Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and 
 |-|-|
 |Requires at least WordPress:|`5.6.0`|
 |Requires PHP:|`8.0`|
-|Tested up to WordPress:|`5.7.1`|
+|Tested up to WordPress:|`5.7.2`|
 
 ## Displaying the bread, a formatted crumbs list.
 
