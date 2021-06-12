@@ -1,8 +1,21 @@
 # Where-Is-My-Bread 🍞
 
+- [Description](https://github.com/amarinediary/Where-Is-My-Bread#description)
+- [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
+1. [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
+2. [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
+3. [Example: Displaying only the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-only-the-last-3-crumbs)
+4. [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
+5. [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
+6. [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
+7. [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
+- [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
+1. [Example: Ouputing the crumbs object]()
+- [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-category-and-taxonomy-crumb-redirecting-to-404)
+
 ## Description
 
-Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Plug-and-play plugin, no required configuration.
+Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. A plug-and-play plugin, with no required configuration.
 
 ||Version|
 |-|-|
@@ -162,7 +175,7 @@ get_the_crumbs();
 var_dump( get_the_crumbs() );
 ```
 
-## Case handling, category and taxonomy crumb redirecting to 404
+## Case handling, category/custom taxonomy crumbs redirecting to 404
 
 As WordPress doesn't generate a category/custom taxonomy root page, the crumb will redirect to a 404. 
 
