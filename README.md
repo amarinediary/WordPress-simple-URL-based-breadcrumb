@@ -11,7 +11,7 @@
 7. [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 1. [Example: Ouputing the crumbs object]()
-- [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-category-and-taxonomy-crumb-redirecting-to-404)
+- [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
 
 ## Description
 
