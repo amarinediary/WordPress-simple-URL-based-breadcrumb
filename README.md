@@ -1,5 +1,7 @@
 # Where-Is-My-Bread 🍞
 
+## Table of contents
+
 - [Description](https://github.com/amarinediary/Where-Is-My-Bread#description)
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
 1. [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
