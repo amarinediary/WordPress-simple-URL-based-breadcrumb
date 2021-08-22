@@ -6,21 +6,21 @@ Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and 
 |-|-|
 |Requires at least WordPress:|`5.6.0`|
 |Requires PHP:|`8.0`|
-|Tested up to WordPress:|`5.7.2`|
+|Tested up to WordPress:|`5.8.0`|
 
 ## Table of contents
 
-- [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
-1. [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
-2. [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
-3. [Example: Displaying only the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-only-the-last-3-crumbs)
-4. [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
-5. [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
-6. [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
-7. [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
-- [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
-1. [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
-- [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
+1. [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
+- 1.1 [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
+- 1.2 [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
+- 1.3 [Example: Displaying only the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-only-the-last-3-crumbs)
+- 1.4 [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
+- 1.5 [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
+- 1.6 [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
+- 1.7 [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
+2. [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
+- 2.1 [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
+- 2.2 [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
 
 ## Displaying the bread, a formatted crumbs list.
 
