@@ -102,10 +102,10 @@ if ( ! function_exists( 'the_bread' ) ) {
         foreach ( $crumbs as $crumb ) {
             $i++;
             
-            if ( $id = url_to_postid( $crumb->url ) )
-                $title = get_the_title( $id );
-            elseif ( $id = get_page_by_path( $crumb->slug )->ID )
-                $title = get_the_title( $id );
+            if ( $identifier = url_to_postid( $crumb->url ) )
+                $title = get_the_title( $identifier );
+            elseif ( $identifier = get_page_by_path( $crumb->slug )->ID )
+                $title = get_the_title( $identifier );
             else
                 $title = ucfirst( str_replace( '-', ' ', $crumb->slug ) );
 
