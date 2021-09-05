@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Text Domain: where-is-my-bread
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * Description: Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Plug-and-play plugin, no required configuration.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.6.0
  * Requires PHP: 8.0
  * Tested up to: 5.8.0
@@ -95,6 +95,11 @@ if ( ! function_exists( 'the_bread' ) ) {
         $length =  ( empty( $ingredients['length'] ) ? null : $ingredients['length'] );
         
         $crumbs = array_slice( get_the_crumbs(), $offset, $length );
+        
+        if ( $id = url_to_postid( $crumb->url ) )
+            $title = get_the_title( $id );
+        elseif ( $id = get_page_by_path( $crumb->slug )->ID )
+            $title = get_the_title( $id );
 
         echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
@@ -104,7 +109,7 @@ if ( ! function_exists( 'the_bread' ) ) {
 
             echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="' . $crumb->url . '">
-                    <span itemprop="name">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</span>
+                    <span itemprop="name">' . ( ( isset( $title ) ) ? $title : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</span>
                 </a>
                 <meta itemprop="position" content="' . $i . '">
             </li>';
