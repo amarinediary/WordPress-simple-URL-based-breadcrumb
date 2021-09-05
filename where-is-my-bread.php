@@ -106,10 +106,12 @@ if ( ! function_exists( 'the_bread' ) ) {
                 $title = get_the_title( $id );
             elseif ( $id = get_page_by_path( $crumb->slug )->ID )
                 $title = get_the_title( $id );
+            else
+                $title = ucfirst( str_replace( '-', ' ', $crumb->slug ) );
 
             echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="' . $crumb->url . '">
-                    <span itemprop="name">' . ( ( isset( $title ) ) ? $title : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) . '</span>
+                    <span itemprop="name">' . $title . '</span>
                 </a>
                 <meta itemprop="position" content="' . $i . '">
             </li>';
