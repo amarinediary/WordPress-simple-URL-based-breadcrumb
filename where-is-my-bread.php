@@ -95,17 +95,17 @@ if ( ! function_exists( 'the_bread' ) ) {
         $length =  ( empty( $ingredients['length'] ) ? null : $ingredients['length'] );
         
         $crumbs = array_slice( get_the_crumbs(), $offset, $length );
-        
-        if ( $id = url_to_postid( $crumb->url ) )
-            $title = get_the_title( $id );
-        elseif ( $id = get_page_by_path( $crumb->slug )->ID )
-            $title = get_the_title( $id );
 
         echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
         $i = 0;
         foreach ( $crumbs as $crumb ) {
             $i++;
+            
+            if ( $id = url_to_postid( $crumb->url ) )
+                $title = get_the_title( $id );
+            elseif ( $id = get_page_by_path( $crumb->slug )->ID )
+                $title = get_the_title( $id );
 
             echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="' . $crumb->url . '">
