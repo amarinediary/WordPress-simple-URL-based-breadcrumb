@@ -14,7 +14,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
 - [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
-- [Example: Displaying only the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-only-the-last-3-crumbs)
+- [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-the-last-3-crumbs)
 - [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
 - [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
@@ -63,7 +63,7 @@ $ingredients = array(
 the_bread( $ingredients );
 ```
 
-### Example: Displaying only the last 3 crumbs
+### Example: Displaying the last 3 crumbs
 
 ```php
 <?php
