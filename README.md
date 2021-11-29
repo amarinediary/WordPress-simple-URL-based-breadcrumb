@@ -133,7 +133,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 }
 ```
 
-## Retrieving the crumbs.
+## Retrieving the crumbs
 
 Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object. Here are a few things to explore:
 
