@@ -160,7 +160,9 @@ var_dump( get_the_crumbs() );
 
 As WordPress doesn't generate a category/custom taxonomy root page, the crumb will redirect to a 404. 
 
-You can create a page named after your category/custom taxonomy slug and use it as a term's index, by creating a custom page template and looping through them.
+You could create a page named after your category/custom taxonomy slug and use it as a term's index, by creating a custom page template and looping through them.
+
+You could also redirect the any category/custom taxonomy root page to the home page or to the first category/custom taxonomy term page.
 
 ## Related stackoverflow post
 
