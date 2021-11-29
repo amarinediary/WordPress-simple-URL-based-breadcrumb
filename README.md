@@ -135,7 +135,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 
 ## Retrieving the crumbs
 
-Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object. Here are a few things to explore:
+Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
 
 Crumbs are slugs in-between the host domain name and the start start of the URL parameters defined by `?` character. 
 
@@ -159,7 +159,7 @@ var_dump( get_the_crumbs() );
 
 ## Case handling, category/custom taxonomy crumbs redirecting to 404
 
-As WordPress doesn't generate a category/custom taxonomy root page, the crumb will redirect to a 404. 
+As WordPress doesn't generate a category/custom taxonomy root page, the crumb will redirect to a 404. Here are a few things to explore:
 
 You could create a page named after your category/custom taxonomy slug and use it as a term's index, by creating a custom page template and looping through them.
 
