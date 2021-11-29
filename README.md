@@ -13,7 +13,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Installation](https://github.com/amarinediary/Where-Is-My-Bread#installation)
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
-- [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
+- [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
 - [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-the-last-3-crumbs)
 - [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
 - [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
@@ -51,7 +51,7 @@ the_bread( array $ingredients = array() );
 ||`offset`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 ||`length`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 
-### Example: The breadcrumb with a custom separator
+### Example: The bread with a custom separator
 
 ```php
 <?php
