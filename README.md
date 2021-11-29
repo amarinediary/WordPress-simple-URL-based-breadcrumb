@@ -21,6 +21,7 @@ Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and 
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 - [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
+- [Related stackoverflow post](https://github.com/amarinediary/Where-Is-My-Bread#related-stackoverflow-post)
 
 ## Displaying the bread, a formatted crumbs list.
 
