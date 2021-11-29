@@ -10,17 +10,17 @@ Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and 
 
 ## Table of contents
 
-1. [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
-- 1.1 [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
-- 1.2 [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
-- 1.3 [Example: Displaying only the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-only-the-last-3-crumbs)
-- 1.4 [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
-- 1.5 [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
-- 1.6 [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
-- 1.7 [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
-2. [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
-- 2.1 [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
-3. [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
+- [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
+- [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
+- [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
+- [Example: Displaying only the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-only-the-last-3-crumbs)
+- [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
+- [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
+- [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
+- [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
+- [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
+- [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
+- [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
 
 ## Displaying the bread, a formatted crumbs list.
 
@@ -43,12 +43,12 @@ the_bread( array $ingredients = array() );
 
 ### Parameters
 
-| |Parameter|Description|
+||Parameter|Description|
 |-|-|-|
-|`ingredients`| |(Optional) Array of arguments for displaying the bread.|
-| |`separator`|The crumb's separator. Default to `>`.|
-| |`offset`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
-| |`length`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
+|`ingredients`||(Optional) Array of arguments for displaying the bread.|
+||`separator`|The crumb's separator. Default to `>`.|
+||`offset`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
+||`length`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 
 ### Example: The breadcrumb with a custom separator
 
