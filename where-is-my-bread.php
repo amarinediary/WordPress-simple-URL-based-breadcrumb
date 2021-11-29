@@ -10,11 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin Name: Where Is My Bread 🍞
  * Text Domain: where-is-my-bread
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
- * Description: Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive, lightweight, lightning fast, WordPress plugin adding URL based breadcrumb support. Plug-and-play plugin, no required configuration.
+ * Description: A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress plugin, both lightweight and lightning fast, adding URL based breadcrumb support. A plug-and-play plugin, with no required configuration.
  * Version: 1.0.1
  * Requires at least: 5.6.0
  * Requires PHP: 8.0
- * Tested up to: 5.8.0
+ * Tested up to: 5.8.2
  * Author: amarinediary
  * Author URI: https://github.com/amarinediary
  * License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
@@ -73,7 +73,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 if ( ! function_exists( 'the_bread' ) ) {
 
     /**
-     * Display the bread, a formatted  crumbs list.
+     * Display the bread, a formatted crumbs list.
      * 
      * @since 1.0.0
      * 
@@ -93,7 +93,6 @@ if ( ! function_exists( 'the_bread' ) ) {
 
         $offset =  ( empty( $ingredients['offset'] ) ? 0 : $ingredients['offset'] );
         $length =  ( empty( $ingredients['length'] ) ? null : $ingredients['length'] );
-        
         $crumbs = array_slice( get_the_crumbs(), $offset, $length );
 
         echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
