@@ -118,8 +118,8 @@ In some cases, for example, when using apostrophes in posts or pages titles, the
 
 By default Where-Is-My-Bread has no associated stylesheet, but has two associated css classes:
 
-- The `<ol>` tag comes with the css class, `🍞` or `bread` *(fallback)*.
-- Each `<li>` tag comes with the class, `crumb`.
+- The `<ol>` tag comes with the css class, `.🍞` or `.bread` *(fallback)*.
+- Each `<li>` tag comes with the class, `.crumb`.
 
 ### Minimal css boilerplate (Optional)
 
