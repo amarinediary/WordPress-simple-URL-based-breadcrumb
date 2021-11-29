@@ -10,6 +10,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 
 ## Table of contents
 
+- [Installation](https://github.com/amarinediary/Where-Is-My-Bread#installation)
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
 - [Example: The breadcrumb with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-breadcrumb-with-a-custom-separator)
@@ -22,6 +23,16 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 - [Case handling, category/custom taxonomy crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-crumbs-redirecting-to-404)
 - [Related stackoverflow post](https://github.com/amarinediary/Where-Is-My-Bread#related-stackoverflow-post)
+
+## Installation
+
+If you have a copy of the plugin as a zip file, you can manually upload it and install it through the Plugins admin screen.
+
+1. Navigate to Plugins → Add New.
+2. Click the Upload Plugin button at the top of the screen.
+3. Download the plugin as a zip file, Select it from your local filesystem.
+4. Click the Install Now button.
+5. When installation is complete, you’ll see “Plugin installed successfully.” Click the Activate Plugin button at the bottom of the page.
 
 ## Displaying the bread, a formatted crumbs list.
 
