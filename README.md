@@ -151,7 +151,7 @@ Crumbs are slugs in-between the host domain name and the start start of the URL 
 
 > eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
 
-In this case crumbs are: "`Where`", "`Is`", "`My`", "`Bread`".
+In this case crumbs are: `where`, `is`, `my`, `bread`.
 
 ```php
 <?php
