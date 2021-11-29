@@ -27,17 +27,6 @@ Where-Is-My-Bread is a URL based WordPress breadcrumb, unstyled, minimalist and 
 ```php
 <?php
 
-/**
- * Display the bread, a formatted crumbs list.
- * 
- * @since 1.0.0
- * 
- * @param Array $ingredients[separator] The crumb's separator. Default to >.
- * @param Array $ingredients[offset] Crumbs array offset. Accept positive/negative Integer. Default to 0. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
- * @param Array $ingredients[length] Crumbs array length. Accept positive/negative Integer. Default to null. Refer to array_slice. https://www.php.net/manual/en/function.array-slice.php.
- * 
- * @return Array The formatted crumbs list.
- */
 the_bread( array $ingredients = array() );
 ```
 
@@ -156,13 +145,6 @@ In this case crumbs are: `where`, `is`, `my`, `bread`.
 ```php
 <?php
 
-/**
- * Retrieve the crumbs.
- * 
- * @since 1.0.0
- *
- * @return Array Crumbs array.
- */
 get_the_crumbs();
 ```
 
