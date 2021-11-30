@@ -12,8 +12,8 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 ### Latest changelog
 
 `1.0.3`
-- Automatically filter out posts types and taxonomies root crumb.
-- Emphasis on WordPress PHP Coding Standards.
+- Automatically filter out posts types and taxonomies root crumbs.
+- Emphasis on WordPress PHP coding standards.
 
 ## Table of contents
 
