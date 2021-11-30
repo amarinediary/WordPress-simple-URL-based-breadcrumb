@@ -9,6 +9,13 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 |Tested up to WordPress:|`5.8.2`|
 |Current plugin version:|`1.0.2`|
 
+### Latest changelog
+
+`1.0.2`
+- Additional condition layer, empty crumbs object case.
+- Page title readability improvement.
+- Emphasis on WordPress PHP Coding Standards.
+
 ## Table of contents
 
 - [Installation](https://github.com/amarinediary/Where-Is-My-Bread#installation)
