@@ -103,6 +103,7 @@ if ( ! function_exists( 'the_bread' ) ) {
             echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
             $i = 0;
+            
             foreach ( $crumbs as $crumb ) {
 
                 $i++;
