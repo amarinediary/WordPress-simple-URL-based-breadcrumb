@@ -7,11 +7,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 };
 
 /**
- * Plugin Name: Where Is My Bread 🍞
+ * Plugin Name: Where's My Bread ? 🍞
  * Text Domain: where-is-my-bread
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * Description: A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress plugin, both lightweight and lightning fast, adding URL based breadcrumb support. A plug-and-play plugin, with no required configuration.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least: 5.6.0
  * Requires PHP: 8.0
  * Tested up to: 5.8.2
@@ -95,32 +95,30 @@ if ( ! function_exists( 'the_bread' ) ) {
         $length =  ( empty( $ingredients['length'] ) ? null : $ingredients['length'] );
         $crumbs = array_slice( get_the_crumbs(), $offset, $length );
 
-        echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
+        if ( ! empty( $crumbs ) ) {
 
-        $i = 0;
-        foreach ( $crumbs as $crumb ) {
-            $i++;
-            
-            if ( $identifier = url_to_postid( $crumb->url ) )
-                $title = get_the_title( $identifier );
-            elseif ( $identifier = get_page_by_path( $crumb->slug )->ID )
-                $title = get_the_title( $identifier );
-            else
-                $title = ucfirst( str_replace( '-', ' ', $crumb->slug ) );
+            echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
-            echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="' . $crumb->url . '">
-                    <span itemprop="name">' . $title . '</span>
-                </a>
-                <meta itemprop="position" content="' . $i . '">
-            </li>';
-
-            if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
-                echo $ingredients['separator'];
+            $i = 0;
+            foreach ( $crumbs as $crumb ) {
+                $i++;
+                
+                //get_page_by_path() usage credit to https://github.com/mohamadnr
+                echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="' . $crumb->url . '">
+                    <span itemprop="name">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ( get_page_by_path( $crumb->slug )->ID ? get_the_title( get_page_by_path( $crumb->slug )->ID ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) ) . '</span>
+                    </a>
+                    <meta itemprop="position" content="' . $i . '">
+                </li>';
+    
+                if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) )
+                    echo $ingredients['separator'];
+    
+            };
+    
+            echo '</ol>';
 
         };
-
-        echo '</ol>';
 
     };
 
