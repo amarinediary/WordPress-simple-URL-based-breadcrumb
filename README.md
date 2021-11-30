@@ -7,18 +7,16 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 |Requires at least WordPress:|`5.6.0`|
 |Requires PHP:|`8.0`|
 |Tested up to WordPress:|`5.8.2`|
-|Current plugin version:|`1.0.2`|
+|Current plugin version:|`1.0.3`|
 
 ### Latest changelog
 
-`1.0.2`
-- Additional condition layer, empty crumbs object case.
-- Page title readability improvement.
+`1.0.3`
+- Automatically filter out posts types and taxonomies root crumb.
 - Emphasis on WordPress PHP Coding Standards.
 
 ## Table of contents
 
-- [Installation](https://github.com/amarinediary/Where-Is-My-Bread#installation)
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
 - [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
@@ -29,19 +27,6 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
-- [Case handling, category/custom taxonomy base crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-base-crumbs-redirecting-to-404)
-- [Unofficial plugin ?](https://github.com/amarinediary/Where-Is-My-Bread#unofficial-plugin-)
-- [Related stackoverflow post](https://github.com/amarinediary/Where-Is-My-Bread#related-stackoverflow-post)
-
-## Installation
-
-If you have a copy of the plugin as a zip file, you can manually upload it and install it through the Plugins admin screen.
-
-1. Navigate to Plugins `→` Add New.
-2. Click the Upload Plugin button at the top of the screen.
-3. [Download the plugin as a zip file](https://github.com/amarinediary/Where-Is-My-Bread/archive/refs/heads/main.zip), Select it from your local filesystem.
-4. Click the Install Now button.
-5. When installation is complete, you’ll see “Plugin installed successfully.” Click the Activate Plugin button at the bottom of the page.
 
 ## Displaying the bread, a formatted crumbs list.
 
@@ -161,7 +146,7 @@ Crumbs are slugs in-between the host domain name and the start start of the URL 
 
 > eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
 
-In this case, crumbs are: `where`, `is`, `my`, `bread`.
+In this case, our crumbs are: `where`, `is`, `my`, `bread`.
 
 ### Example: Ouputing the crumbs object
 
@@ -170,21 +155,6 @@ In this case, crumbs are: `where`, `is`, `my`, `bread`.
 
 var_dump( get_the_crumbs() );
 ```
-
-## Case handling, category/custom taxonomy base crumbs redirecting to 404
-
-As WordPress doesn't generate a category/custom taxonomy root page, the crumb will redirect to a 404. Here are a few things to explore:
-
-- You could create a page named after your category/custom taxonomy slug and use it as a term's index, by creating a custom page template and looping through them.
-- You could redirect any category/custom taxonomy root page query to that category/custom taxonomy first term's page.
-
-## Unofficial plugin ?
-
-An official plugin wouldn't give you the level of customization needed. Do something amazing, don't be afraid, get your hands dirty.
-
-## Related stackoverflow post
-
-- https://stackoverflow.com/a/67453887/3645650
 
 ## Watch it, Star it, Fork it
 
