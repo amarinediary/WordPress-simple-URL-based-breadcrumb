@@ -1,6 +1,6 @@
 # Where's My Bread ? 🍞
 
-A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress plugin, both lightweight and lightning fast, adding URL based breadcrumb support. A plug-and-play plugin, with no required configuration.
+A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress unofficial plugin, both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
 
 ||Version|
 |-|-|
@@ -175,6 +175,10 @@ As WordPress doesn't generate a category/custom taxonomy root page, the crumb wi
 
 - You could create a page named after your category/custom taxonomy slug and use it as a term's index, by creating a custom page template and looping through them.
 - You could redirect any category/custom taxonomy root page query to that category/custom taxonomy first term's page.
+
+## Unofficial plugin ?
+
+An official plugin wouldn't give you the level of customization needed. Do something amazing, don't be afraid, get your hands dirty.
 
 ## Related stackoverflow post
 
