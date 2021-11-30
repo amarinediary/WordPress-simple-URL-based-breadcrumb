@@ -178,3 +178,7 @@ An official plugin wouldn't give you the level of customization needed. Do somet
 ## Related stackoverflow post
 
 - https://stackoverflow.com/a/67453887/3645650
+
+## Watch it, Star it, Fork it
+
+We made your day? Give us a star!
