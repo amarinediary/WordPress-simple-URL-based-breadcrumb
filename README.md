@@ -41,7 +41,7 @@ If you have a copy of the plugin as a zip file, you can manually upload it and i
 ```php
 <?php
 
-the_bread( array $ingredients = array() );
+the_bread( $ingredients = array() );
 ```
 
 ### Parameters
