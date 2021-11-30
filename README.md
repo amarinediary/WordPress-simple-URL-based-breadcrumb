@@ -148,6 +148,10 @@ Crumbs are slugs in-between the host domain name and the start of the URL parame
 
 In this case, our crumbs are: `where`, `is`, `my`, `bread`.
 
+### Posts types and taxonomies root crumbs
+
+Posts types and taxonomies root crumbs are automatically filtered out via the `get_the_crumbs()` function.
+
 ### Example: Ouputing the crumbs object
 
 ```php
