@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Text Domain: where-is-my-bread
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * Description: A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress unofficial plugin, both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Requires at least: 5.6.0
  * Requires PHP: 8.0
  * Tested up to: 5.8.2
@@ -50,7 +50,47 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         $flour = ( str_ends_with( $flour, '/' ) ? explode( '/', substr( $flour, 1, -1 ) ) : explode( '/', substr( $flour, 1 ) ) );
 
-        $crumbs = [];
+        $banned_slugs = array();
+        
+        $post_types = get_post_types( array(
+            'public'   => true,
+        ), 'objects' );
+
+        foreach( $post_types as $post_type ) {
+
+            if ( isset( $post_type->rewrite['slug'] ) ) {
+
+                array_push( $banned_slugs, $post_type->rewrite['slug'] );
+
+            } else {
+
+                array_push( $banned_slugs, $post_type->name );
+
+            };
+
+        };
+
+        $taxonomies = get_taxonomies( array(
+            'public'   => true,
+        ), 'objects' );
+        
+        foreach( $taxonomies as $taxonomy ) {
+
+            if ( isset( $taxonomy->rewrite['slug'] ) ) {
+
+                array_push( $banned_slugs, $taxonomy->rewrite['slug'] );
+
+            } else {
+
+                array_push( $banned_slugs, $taxonomy->name );
+
+            };
+
+        };
+
+        $flour = array_diff( $flour, $banned_slugs );
+
+        $crumbs = array();
 
         foreach ( $flour as $crumb ) {
 
@@ -61,7 +101,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
             array_push( $crumbs, (object) array(
                 'slug' => $slug,
                 'url' => $url,
-            ) );    
+            ) );
 
         };
 
