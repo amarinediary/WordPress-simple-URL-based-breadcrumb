@@ -156,12 +156,6 @@ Crumbs are slugs in-between the host domain name and the start start of the URL 
 
 In this case, crumbs are: `where`, `is`, `my`, `bread`.
 
-```php
-<?php
-
-get_the_crumbs();
-```
-
 ### Example: Ouputing the crumbs object
 
 ```php
