@@ -142,7 +142,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 
 Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
 
-Crumbs are slugs in-between the host domain name and the start start of the URL parameters defined by `?` character. 
+Crumbs are slugs in-between the host domain name and the start of the URL parameters defined by `?` character. 
 
 > eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
 
