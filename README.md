@@ -1,4 +1,4 @@
-# Where's My Breadcrumb ? 🍞
+# Where's My Bread ? 🍞
 
 A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress plugin, both lightweight and lightning fast, adding URL based breadcrumb support. A plug-and-play plugin, with no required configuration.
 
