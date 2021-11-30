@@ -26,6 +26,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
+- [Posts types and taxonomies root crumbs](https://github.com/amarinediary/Where-Is-My-Bread#posts-types-and-taxonomies-root-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 
 ## Displaying the bread, a formatted crumbs list.
