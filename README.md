@@ -23,6 +23,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 - [Case handling, category/custom taxonomy base crumbs redirecting to 404](https://github.com/amarinediary/Where-Is-My-Bread#case-handling-categorycustom-taxonomy-base-crumbs-redirecting-to-404)
+- [Unofficial plugin ?](https://github.com/amarinediary/Where-Is-My-Bread#unofficial-plugin-)
 - [Related stackoverflow post](https://github.com/amarinediary/Where-Is-My-Bread#related-stackoverflow-post)
 
 ## Installation
