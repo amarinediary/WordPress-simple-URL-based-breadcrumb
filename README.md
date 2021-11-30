@@ -87,7 +87,7 @@ the_bread( $ingredients );
 
 ### Post and page title handling
 
-Our secret sauce. In some cases, when using apostrophes in posts or pages titles for example, the crumb might not reflect the actual title. Using the [`url_to_postid()`](https://developer.wordpress.org/reference/functions/url_to_postid/) and [`get_page_by_path()`](https://developer.wordpress.org/reference/functions/get_page_by_path/) in conjonction with the [`get_the_title()`](https://developer.wordpress.org/reference/functions/get_the_title/), we can convert the crumb URL into it's matching post or page title. This is automatically handled by `the_bread()` function.
+Our secret sauce. In some cases, when using apostrophes in posts or pages titles for example, the crumb might not reflect the actual title. Using [`url_to_postid()`](https://developer.wordpress.org/reference/functions/url_to_postid/) and [`get_page_by_path()`](https://developer.wordpress.org/reference/functions/get_page_by_path/) in conjonction with the [`get_the_title()`](https://developer.wordpress.org/reference/functions/get_the_title/) function, we can convert the crumb URL into it's matching post or page title. This is automatically handled by `the_bread()` function.
 
 ### HTML5 structure output
 
