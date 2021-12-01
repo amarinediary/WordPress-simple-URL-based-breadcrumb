@@ -21,7 +21,6 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
 - [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
 - [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-the-last-3-crumbs)
-- [Post and page title handling](https://github.com/amarinediary/Where-Is-My-Bread#post-and-page-title-handling)
 - [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
@@ -70,10 +69,6 @@ $ingredients = array(
 
 the_bread( $ingredients );
 ```
-
-### Post and page title handling
-
-Our secret sauce. In some cases, when using apostrophes in posts or pages titles for example, the crumb might not reflect the actual title. Using [`url_to_postid()`](https://developer.wordpress.org/reference/functions/url_to_postid/) and [`get_page_by_path()`](https://developer.wordpress.org/reference/functions/get_page_by_path/) in conjonction with the [`get_the_title()`](https://developer.wordpress.org/reference/functions/get_the_title/) function, we can convert the crumb URL into it's matching post or page title. This is automatically handled by `the_bread()` function.
 
 ### HTML5 structure output
 
