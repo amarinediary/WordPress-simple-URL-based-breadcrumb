@@ -147,8 +147,7 @@ if ( ! function_exists( 'the_bread' ) ) {
             foreach ( $crumbs as $crumb ) {
 
                 $i++;
-                
-                //get_page_by_path() usage, credit to https://github.com/mohamadnr
+
                 echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="' . $crumb->url . '">
                         <span itemprop="name">' . ( url_to_postid( $crumb->url ) ? get_the_title( url_to_postid( $crumb->url ) ) : ( get_page_by_path( $crumb->slug )->ID ? get_the_title( get_page_by_path( $crumb->slug )->ID ) : ucfirst( str_replace( '-', ' ', $crumb->slug ) ) ) ) . '</span>
