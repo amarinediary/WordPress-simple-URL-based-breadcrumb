@@ -12,7 +12,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 ### Latest changelog
 
 `1.0.3`
-- Automatically filter out posts types and taxonomies root crumbs.
+- Automatically filter out post types and taxonomies root crumbs.
 - Emphasis on WordPress PHP coding standards.
 
 ## Table of contents
@@ -137,7 +137,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 
 Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
 
-Crumbs are slugs in-between the host domain name and the start of the URL parameters defined by `?` character. 
+As WordPress doesn't generate a root page for post types and taxonomies, the function automatically filter out post types and taxonomies root crumbs by generating an array of banned slugs.
 
 ### Example: Ouputing the crumbs object
 
