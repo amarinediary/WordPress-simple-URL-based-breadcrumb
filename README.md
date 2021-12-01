@@ -25,7 +25,6 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
-- [Posts types and taxonomies root crumbs](https://github.com/amarinediary/Where-Is-My-Bread#posts-types-and-taxonomies-root-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 
 ## Displaying the bread, a formatted crumbs list.
@@ -139,14 +138,6 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
 
 Crumbs are slugs in-between the host domain name and the start of the URL parameters defined by `?` character. 
-
-> eg: [https://example.com/where/is/my/bread/?s=bakery&recipe=bread](#!)
-
-In this case, our crumbs are: `where`, `is`, `my`, `bread`.
-
-### Posts types and taxonomies root crumbs
-
-Posts types and taxonomies root crumbs are automatically filtered out via the `get_the_crumbs()` function.
 
 ### Example: Ouputing the crumbs object
 
