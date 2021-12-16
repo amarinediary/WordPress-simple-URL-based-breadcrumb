@@ -135,7 +135,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 
 ## Retrieving the crumbs
 
-Even tho we recomend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
+Even tho we recommend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
 
 As WordPress doesn't generate a root page for post types and taxonomies, the `get_the_crumbs()` function automatically filter out post types and taxonomies root crumbs by generating an array of banned slugs.
 
