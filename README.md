@@ -139,7 +139,7 @@ Even tho we recommend you to use `the_bread()` function to display and build you
 
 As WordPress doesn't generate a root page for post types and taxonomies, the `get_the_crumbs()` function automatically filter out post types and taxonomies root crumbs by generating an array of banned slugs.
 
-### Example: Ouputing the crumbs object
+### Example: Outputting the crumbs object
 
 ```php
 <?php
