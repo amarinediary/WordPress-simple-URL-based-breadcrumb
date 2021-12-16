@@ -136,7 +136,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 
 ## `get_the_crumbs()`
 
-As WordPress doesn't generate a root page for post types and taxonomies, the `get_the_crumbs()` function automatically filter out post types and taxonomies root crumbs by generating an array of banned slugs.
+As WordPress doesn't generate a root page for post types and taxonomies, `get_the_crumbs()` automatically filter-out post types and taxonomies root crumbs by generating an array of banned slugs.
 
 ### Retrieving the crumbs
 
