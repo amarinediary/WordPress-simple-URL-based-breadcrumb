@@ -56,7 +56,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
             'public'   => true,
         ), 'objects' );
 
-        foreach( $post_types as $post_type ) {
+        foreach ( $post_types as $post_type ) {
 
             if ( isset( $post_type->rewrite['slug'] ) ) {
 
@@ -74,7 +74,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
             'public'   => true,
         ), 'objects' );
         
-        foreach( $taxonomies as $taxonomy ) {
+        foreach ( $taxonomies as $taxonomy ) {
 
             if ( isset( $taxonomy->rewrite['slug'] ) ) {
 
