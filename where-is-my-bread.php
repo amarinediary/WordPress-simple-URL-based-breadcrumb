@@ -53,7 +53,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         $banned_slugs = array();
         
         $post_types = get_post_types( array(
-            'public'   => true,
+            'public' => true,
         ), 'objects' );
 
         foreach ( $post_types as $post_type ) {
@@ -71,7 +71,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         };
 
         $taxonomies = get_taxonomies( array(
-            'public'   => true,
+            'public' => true,
         ), 'objects' );
         
         foreach ( $taxonomies as $taxonomy ) {
