@@ -24,7 +24,6 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
-- [`get_the_crumbs()`](https://github.com/amarinediary/Where-Is-My-Bread#get_the_crumbs)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 
@@ -134,11 +133,7 @@ By default Where-Is-My-Bread has no associated stylesheet, but has two associate
 }
 ```
 
-## `get_the_crumbs()`
-
-As WordPress doesn't generate a root page for post types and taxonomies, `get_the_crumbs()` automatically filter-out post types and taxonomies root crumbs by generating an array of banned slugs.
-
-### Retrieving the crumbs
+## Retrieving the crumbs
 
 Even tho we recommend you to use `the_bread()` function to display and build your own breadcrumb, you can use `get_the_crumbs()` to retrieve the crumbs object.
 
