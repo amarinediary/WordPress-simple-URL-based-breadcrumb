@@ -14,7 +14,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 #### `1.0.4`
 - `1.0.3` hotfix: Fix for `get_page_by_path()` critical error hotfix. Fix for crumb's url shift error due to `array_diff` between both `$crumbs` and `$banned_crumbs`.
 - Automatically filter out post types and taxonomies root crumbs.
-- `is_search` and `is_post_type_archive` support remove due to lack of consistency when pagination is used. (An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose)).
+- `is_search` and `is_post_type_archive` support remove due to lack of consistency. (An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose)).
 - Emphasis on WordPress PHP coding standards.
 
 ## Table of contents
