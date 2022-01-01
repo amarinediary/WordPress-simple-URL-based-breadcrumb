@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Description: A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress unofficial plugin, both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
  * Version: 1.0.4
  * Requires at least: 3.0.0
- * Requires PHP: 8.0
+ * Requires PHP: 8.0.0
  * Tested up to: 5.8.2
  * Author: amarinediary
  * Author URI: https://github.com/amarinediary
@@ -151,7 +151,7 @@ if ( ! function_exists( 'the_bread' ) ) {
 
         $crumbs = array_slice( get_the_crumbs(), $offset, $length );
 
-        if ( ! empty( $crumbs ) && ! is_search() && ! is_archive() ) {
+        if ( ! empty( $crumbs ) && ! is_search() && ! is_post_type_archive() ) {
 
             echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
