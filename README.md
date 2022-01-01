@@ -5,7 +5,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 ||Version|
 |-|-|
 |Requires at least WordPress:|`3.0.0`|
-|Requires PHP:|`8.0`|
+|Requires PHP:|`8.0.0`|
 |Tested up to WordPress:|`5.8.2`|
 |Current plugin version:|`1.0.4`|
 
