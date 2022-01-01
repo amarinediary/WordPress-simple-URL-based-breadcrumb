@@ -64,9 +64,11 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
             $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $crumb. '/' );
 
-            array_push( $crumbs, array(
-                $slug => $url,
-            ) );
+            array_push( $crumbs, 
+                array(
+                    $slug => $url,
+                )
+            );
 
         };
 
@@ -114,9 +116,11 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
             $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $banned_slug ) ) . $banned_slug. '/' );
 
-            array_push( $banned_crumbs, array(
-                $slug => $url,
-            ) );
+            array_push( $banned_crumbs, 
+                array(
+                    $slug => $url,
+                )
+            );
 
         };
 
