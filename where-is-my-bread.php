@@ -48,6 +48,12 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         };
 
+        if ( str_contains( $flour, 'page' ) ) {
+
+            $flour = substr( $flour, 0, strpos( $flour, 'page' ) );
+
+        };
+
         $flour = ( str_ends_with( $flour, '/' ) ? explode( '/', substr( $flour, 1, -1 ) ) : explode( '/', substr( $flour, 1 ) ) );
 
         $crumbs = array();
@@ -151,7 +157,7 @@ if ( ! function_exists( 'the_bread' ) ) {
 
         $crumbs = array_slice( get_the_crumbs(), $offset, $length );
 
-        if ( ! empty( $crumbs ) && ! is_search() && ! is_post_type_archive() ) {
+        if ( ! empty( $crumbs ) ) {
 
             echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
