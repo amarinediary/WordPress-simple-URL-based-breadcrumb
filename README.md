@@ -11,8 +11,10 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 
 ### Latest changelog
 
-`1.0.3`
+`1.0.4`
+- `1.0.3` Hotfix.
 - Automatically filter out post types and taxonomies root crumbs.
+- `is_search` and `is_archive` support remove due to lack of consistency. (An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose)).
 - Emphasis on WordPress PHP coding standards.
 
 ## Table of contents
