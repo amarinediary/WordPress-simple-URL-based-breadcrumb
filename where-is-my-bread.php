@@ -1,10 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-
-    exit;
-
-};
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Plugin Name: Where's My Bread ? 🍞
@@ -23,11 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * GitHub Branch: main
  */
 
-if ( version_compare( PHP_VERSION, '8.0.0', '<' ) ) {
-
-    return;
-
-};
+if ( version_compare( PHP_VERSION, '8.0.0', '<' ) ) return;
 
 if ( ! function_exists( 'get_the_crumbs' ) ) {
 
@@ -42,17 +34,9 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         $flour = $_SERVER['REQUEST_URI'];
 
-        if ( str_contains( $flour, '?' ) ) {
+        if ( str_contains( $flour, '?' ) ) $flour = substr( $flour, 0, strpos( $flour, '?' ) );
 
-            $flour = substr( $flour, 0, strpos( $flour, '?' ) );
-
-        };
-
-        if ( str_contains( $flour, 'page' ) ) {
-
-            $flour = substr( $flour, 0, strpos( $flour, 'page' ) );
-
-        };
+        if ( str_contains( $flour, 'page' ) ) $flour = substr( $flour, 0, strpos( $flour, 'page' ) );
 
         $flour = ( str_ends_with( $flour, '/' ) ? explode( '/', substr( $flour, 1, -1 ) ) : explode( '/', substr( $flour, 1 ) ) );
 
@@ -76,35 +60,33 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         $banned_slugs = array();
         
-        $post_types = get_post_types( array(
-            'public' => true,
-        ), 'objects' );
+        $post_types = get_post_types( 
+            array(
+                'public' => true,
+            ),
+            'objects'
+        );
 
         foreach ( $post_types as $post_type ) {
 
             array_push( $banned_slugs, $post_type->name );
 
-            if ( isset( $post_type->rewrite['slug'] ) ) {
-
-                array_push( $banned_slugs, $post_type->rewrite['slug'] );
-
-            };
+            if ( isset( $post_type->rewrite['slug'] ) ) array_push( $banned_slugs, $post_type->rewrite['slug'] );
 
         };
 
-        $taxonomies = get_taxonomies( array(
-            'public' => true,
-        ), 'objects' );
+        $taxonomies = get_taxonomies( 
+            array(
+                'public' => true,
+            ),
+            'objects'
+        );
         
         foreach ( $taxonomies as $taxonomy ) {
 
             array_push( $banned_slugs, $taxonomy->name );
-
-            if ( isset( $taxonomy->rewrite['slug'] ) ) {
-
-                array_push( $banned_slugs, $taxonomy->rewrite['slug'] );
-
-            };
+            
+            if ( isset( $taxonomy->rewrite['slug'] ) ) array_push( $banned_slugs, $taxonomy->rewrite['slug'] );
 
         };
 
@@ -178,11 +160,7 @@ if ( ! function_exists( 'the_bread' ) ) {
                     <meta itemprop="position" content="' . $i . '">
                 </li>';
     
-                if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) ) {
-
-                    echo $ingredients['separator'];
-
-                };
+                if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) ) echo $ingredients['separator'];
     
             };
     
