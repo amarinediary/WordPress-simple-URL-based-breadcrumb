@@ -2,10 +2,6 @@
 
 A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress unofficial plugin, both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
 
-## Give us feedback
-
-Let us know how we can improve this plugin. Either [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose) or if you don't have a GitHub account you can give us feedback through the following Google [Where-Is-My-Bread Plugin Feedback Form](https://forms.gle/m9PM6dEX8aZrmedG9). (No account required).
-
 ||Version|
 |-|-|
 |Requires at least WordPress:|`3.0.0`|
@@ -21,6 +17,10 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 - Emphasis on WordPress PHP coding standards.
 
 An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
+
+## Give us feedback
+
+Let us know how we can improve this plugin. Either [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose) or if you don't have a GitHub account you can give us feedback through the following Google [Where-Is-My-Bread Plugin Feedback Form](https://forms.gle/m9PM6dEX8aZrmedG9). (No account required).
 
 ## Table of contents
 
