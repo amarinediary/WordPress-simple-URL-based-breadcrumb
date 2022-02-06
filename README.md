@@ -4,7 +4,7 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 
 ## Give us feedback
 
-Let us know how we can improve this plugin. Either [open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose). If you don't have a GitHub account you can give us feedback through Google [Where-Is-My-Bread Plugin Feedback Form](https://forms.gle/m9PM6dEX8aZrmedG9). (No account required).
+Let us know how we can improve this plugin. Either [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose). If you don't have a GitHub account you can give us feedback through Google [Where-Is-My-Bread Plugin Feedback Form](https://forms.gle/m9PM6dEX8aZrmedG9). (No account required).
 
 ||Version|
 |-|-|
