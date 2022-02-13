@@ -46,6 +46,8 @@ Since the January 31 2022, validation coming from the Google Search Console seem
 
 > [...] Our team has investigated a couple of instances where this search verifies that the markup is there, despite the disagreement with Search Console and has found a solution, where the errors decline steadily over the course of a few days [...]
 
+It would seems that the issue is coming from the Google Bot validation itelf and not the structured data of the plugin. We will continue to monitor the situation as 2022 unfold.
+
 Additional Source:
 - [How To Resolve Misattributed Errors In The New Google Search Console](https://www.schemaapp.com/schema-markup/how-to-resolve-misattributed-errors-in-the-new-google-search-console/)
 - [Discrepancies in Google Search Console: Enhancement Reports vs. Performance Reports](https://support.schemaapp.com/support/solutions/articles/33000267425-discrepancies-in-google-search-console-enhancement-reports-vs-performance-reports)
