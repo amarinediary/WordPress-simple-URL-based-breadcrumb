@@ -24,6 +24,7 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 
 ## Table of contents
 
+- [Know issues]()
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
 - [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
@@ -33,6 +34,19 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
+
+## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
+In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
+
+Since the January 31 2022, validation coming from the Google Search Console seems to currently be inaccurate. This is probably due to the recent update to the Google Search Console:
+
+> Search Console has changed the way that it evaluates and reports errors in Breadcrumbs and HowTo structured data. As a result, you may see changes in the number of Breadcrumbs > and HowTo entities and issues reported for your property, as well as a change in severity of some issues from errors to warnings.
+
+- Source @ https://support.google.com/webmasters/answer/6211453?hl=en#zippy=%2Crich-result-reports
+
+Additional informations:
+- [How To Resolve Misattributed Errors In The New Google Search Console](https://www.schemaapp.com/schema-markup/how-to-resolve-misattributed-errors-in-the-new-google-search-console/)
+- [Discrepancies in Google Search Console: Enhancement Reports vs. Performance Reports](https://support.schemaapp.com/support/solutions/articles/33000267425-discrepancies-in-google-search-console-enhancement-reports-vs-performance-reports)
 
 ## Displaying the bread, a formatted crumbs list.
 
