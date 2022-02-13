@@ -44,7 +44,9 @@ Since the January 31 2022, validation coming from the Google Search Console seem
 
 - Source @ https://support.google.com/webmasters/answer/6211453?hl=en#zippy=%2Crich-result-reports
 
-Additional informations:
+> [...] Our team has investigated a couple of instances where this search verifies that the markup is there, despite the disagreement with Search Console and has found a solution, where the errors decline steadily over the course of a few days [...]
+
+Additional Source:
 - [How To Resolve Misattributed Errors In The New Google Search Console](https://www.schemaapp.com/schema-markup/how-to-resolve-misattributed-errors-in-the-new-google-search-console/)
 - [Discrepancies in Google Search Console: Enhancement Reports vs. Performance Reports](https://support.schemaapp.com/support/solutions/articles/33000267425-discrepancies-in-google-search-console-enhancement-reports-vs-performance-reports)
 
