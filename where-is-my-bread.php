@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Version: 1.0.4
  * Requires at least: 3.0.0
  * Requires PHP: 8.0.0
- * Tested up to: 5.8.3
+ * Tested up to: 5.9.0
  * Author: amarinediary
  * Author URI: https://github.com/amarinediary
  * License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
