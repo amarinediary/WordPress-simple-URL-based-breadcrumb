@@ -101,7 +101,7 @@ $ingredients = array(
 the_bread( $ingredients );
 ```
 
-### Example: The bread with the root crumb
+### Example: The bread with a root crumb
 
 ```php
 <?php
