@@ -7,14 +7,17 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 |Requires at least WordPress:|`3.0.0`|
 |Requires PHP:|`8.0.0`|
 |Tested up to WordPress:|`5.9.0`|
-|Current plugin version:|`1.0.4`|
+|Current plugin version:|`1.0.5`|
 
 ### Latest changelog
 
-#### `1.0.4`
-- `1.0.3` hotfix: Fix for `get_page_by_path()` critical error hotfix. Fix for crumb's url shift error due to `array_diff` between both `$crumbs` and `$banned_crumbs`.
-- Automatically filter out post types and taxonomies root crumbs.
-- Emphasis on WordPress PHP coding standards.
+#### `1.0.5`
+- [x] Fix an issue preventing numbered based slugs to be properly outputted.
+- [x] Adding `$ingredients['root']` argument.
+- [x] Adding `$ingredients['root']['slug']`.
+- [x] Adding `$ingredient['root']['url']`.
+- [x] Emphasis on WordPress PHP coding standards.
+- Special thanks to [@hanyseyedy](https://github.com/hanyseyedy) for pointing out a few issues in `1.0.4`.
 
 An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
 
