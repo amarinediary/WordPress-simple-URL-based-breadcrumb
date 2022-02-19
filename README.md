@@ -32,6 +32,7 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 - [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
 - [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
 - [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-the-last-3-crumbs)
+- [Example: The bread with a root crumb](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-root-crumb)
 - [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
