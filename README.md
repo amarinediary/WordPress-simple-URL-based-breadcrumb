@@ -17,9 +17,9 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 - - [x] Adding `$ingredients['root']['slug']`.
 - - [x] Adding `$ingredient['root']['url']`.
 - - [x] Emphasis on WordPress PHP coding standards.
-- - Special thanks to [@hanyseyedy](https://github.com/hanyseyedy) for pointing out a few issues in `1.0.4`.
+- Special thanks to [@hanyseyedy](https://github.com/hanyseyedy) for pointing out a few issues in `1.0.4`.
 
-An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
+An idea on how the search's breadcrumb should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
 
 ## Give us feedback 🙏
 
@@ -65,12 +65,15 @@ the_bread( $ingredients = array() );
 
 ### Parameters
 
-||Parameter|Description|
-|-|-|-|
-|`ingredients`||(Optional) Array of arguments for displaying the bread.|
-||`separator`|The crumb's separator. Default to `>`.|
-||`offset`|Crumbs offset. Accept positive/negative Integer. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
-||`length`|Crumbs length. Accept positive/negative Integer. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
+|Parameter|Description|
+|-|-|
+|`$ingredients`|(Optional) `Array` of arguments for displaying the bread.|
+|`$ingredients['root']`|`Array` Root crumb. Default to `null`.|
+|`$ingredients['root']['slug']`|(Required if `$ingredients['root']`). Root crumb slug.|
+|`$ingredients['root']['url']`|(Required if `$ingredients['root']`). Root crumb url.|
+|`$ingredients['separator']`|The crumb's separator.|
+|`$ingredients['offset']`|Crumbs offset. Accept positive/negative `Integer`. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
+|`$ingredients['length']`|Crumbs length. Accept positive/negative `Integer`. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 
 ### Example: The bread with a custom separator
 
