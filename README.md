@@ -100,6 +100,21 @@ $ingredients = array(
 the_bread( $ingredients );
 ```
 
+### Example: The bread with the root crumb
+
+```php
+<?php
+
+$ingredients = array(
+    'root' => array(
+        'slug' => 'home',
+        'url' => get_home_url(),
+    ),
+);
+
+the_bread( $ingredients );
+```
+
 ### HTML5 structure output
 
 ```html
