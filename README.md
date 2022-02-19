@@ -12,12 +12,12 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 ### Latest changelog
 
 #### `1.0.5`
-- [x] Fix an issue preventing numbered based slugs to be properly outputted.
-- [x] Adding `$ingredients['root']` argument.
-- [x] Adding `$ingredients['root']['slug']`.
-- [x] Adding `$ingredient['root']['url']`.
-- [x] Emphasis on WordPress PHP coding standards.
-- Special thanks to [@hanyseyedy](https://github.com/hanyseyedy) for pointing out a few issues in `1.0.4`.
+- - [x] Fix an issue preventing numbered based slugs to be properly outputted.
+- - [x] Adding `$ingredients['root']` argument.
+- - [x] Adding `$ingredients['root']['slug']`.
+- - [x] Adding `$ingredient['root']['url']`.
+- - [x] Emphasis on WordPress PHP coding standards.
+- - Special thanks to [@hanyseyedy](https://github.com/hanyseyedy) for pointing out a few issues in `1.0.4`.
 
 An idea on how search and archive's breadcrumb pages should be handled? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
 
