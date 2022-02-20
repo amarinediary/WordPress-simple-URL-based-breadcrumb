@@ -88,7 +88,11 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
             array_push( $banned_slugs, $post_type->name );
 
-            if ( isset( $post_type->rewrite['slug'] ) ) array_push( $banned_slugs, $post_type->rewrite['slug'] );
+            if ( isset( $post_type->rewrite['slug'] ) ) {
+            
+                array_push( $banned_slugs, $post_type->rewrite['slug'] );
+            
+            };
 
         };
 
@@ -103,7 +107,11 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
             array_push( $banned_slugs, $taxonomy->name );
             
-            if ( isset( $taxonomy->rewrite['slug'] ) ) array_push( $banned_slugs, $taxonomy->rewrite['slug'] );
+            if ( isset( $taxonomy->rewrite['slug'] ) ) {
+            
+                array_push( $banned_slugs, $taxonomy->rewrite['slug'] );
+            
+            };
 
         };
 
