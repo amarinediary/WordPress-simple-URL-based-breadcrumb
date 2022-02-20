@@ -1,4 +1,4 @@
-# Where's My Bread ? 🍞 (@see [so/q/50893992](https://stackoverflow.com/a/67453887/3645650))
+# Where's My Bread ? 🍞
 
 A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress unofficial plugin, both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
 
