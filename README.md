@@ -46,7 +46,7 @@ Since the January 31 2022, validation coming from the Google Search Console seem
 
 > Search Console has changed the way that it evaluates and reports errors in Breadcrumbs and HowTo structured data. As a result, you may see changes in the number of Breadcrumbs > and HowTo entities and issues reported for your property, as well as a change in severity of some issues from errors to warnings.
 
-- Source @ https://support.google.com/webmasters/answer/6211453?hl=en#zippy=%2Crich-result-reports
+- Source @ [Data anomalies in Search Console](https://support.google.com/webmasters/answer/6211453?hl=en#zippy=%2Crich-result-reports)
 
 > [...] Our team has investigated a couple of instances where this search verifies that the markup is there, despite the disagreement with Search Console and has found a solution, where the errors decline steadily over the course of a few days [...]
 
