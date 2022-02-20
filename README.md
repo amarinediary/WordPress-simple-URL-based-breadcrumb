@@ -72,7 +72,7 @@ the_bread( $ingredients = array() );
 |`$ingredients['root']`|`Array` Root crumb. Default to `null`.|
 |`$ingredients['root']['slug']`|(Required if `$ingredients['root']`). Root crumb slug.|
 |`$ingredients['root']['url']`|(Required if `$ingredients['root']`). Root crumb url.|
-|`$ingredients['separator']`|The crumb's separator.|
+|`$ingredients['separator']`|The crumb's separator. The separator is not escaped.|
 |`$ingredients['offset']`|Crumbs offset. Accept positive/negative `Integer`. Default to `0`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 |`$ingredients['length']`|Crumbs length. Accept positive/negative `Integer`. Default to `null`. Refer to [array_slice](https://www.php.net/manual/en/function.array-slice.php).|
 
