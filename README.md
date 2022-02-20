@@ -119,7 +119,7 @@ the_bread( $ingredients );
 
 ## Breadcrumb behaviour/approach for post types and taxonomies
 
-As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. We decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This is an intended to match WordPress behaviour/approach.
+As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. We decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This is intended to match WordPress behaviour/approach.
 
 ### HTML5 structure output
 
