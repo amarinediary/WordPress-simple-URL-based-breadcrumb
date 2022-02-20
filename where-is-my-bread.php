@@ -77,7 +77,6 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         $banned_slugs = array();
         
-        //round up all post types
         $post_types = get_post_types( 
             array(
                 'public' => true,
@@ -93,7 +92,6 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         };
 
-        //round up all taxonomies
         $taxonomies = get_taxonomies( 
             array(
                 'public' => true,
@@ -160,13 +158,37 @@ if ( ! function_exists( 'the_bread' ) ) {
      * @return  Array   The formatted crumbs list.
      */
     function the_bread( $ingredients = array() ) {
-
-        $root = ( empty( $ingredients['root'] ) ? null : $ingredients['root'] );
-
-        $offset = ( empty( $ingredients['offset'] ) ? 0 : $ingredients['offset'] );
-
-        $length = ( empty( $ingredients['length'] ) ? null : $ingredients['length'] );
-
+        
+        if ( empty( $ingredients['root'] ) ) {
+        
+            $root = null;
+            
+        } else {
+        
+            $root = $ingredients['root'];
+            
+        };
+        
+        if ( empty( $ingredients['offset'] ) ) {
+        
+            $offset = 0;
+            
+        } else {
+        
+            $offset = $ingredients['offset'];
+            
+        };
+               
+        if ( empty( $ingredients['length'] ) ) {
+        
+            $length = null;
+            
+        } else {
+        
+            $length = $ingredients['length'];
+            
+        };
+        
         $crumbs = get_the_crumbs();
 
         if ( ! empty( $root ) ) {
