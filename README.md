@@ -33,12 +33,12 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 - [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
 - [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-the-last-3-crumbs)
 - [Example: The bread with a root crumb](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-root-crumb)
-- [Breadcrumb behaviour/approach for post types and taxonomies](https://github.com/amarinediary/Where-Is-My-Bread#breadcrumb-behaviourapproach-for-post-types-and-taxonomies)
 - [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
 - [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
+- [Breadcrumb behaviour/approach for post types and taxonomies](https://github.com/amarinediary/Where-Is-My-Bread#breadcrumb-behaviourapproach-for-post-types-and-taxonomies)
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
 In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
@@ -117,10 +117,6 @@ $ingredients = array(
 the_bread( $ingredients );
 ```
 
-## Breadcrumb behaviour/approach for post types and taxonomies
-
-As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. We decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This is intended to match WordPress behaviour/approach.
-
 ### HTML5 structure output
 
 ```html
@@ -196,6 +192,10 @@ Even tho we recommend you to use `the_bread()` function to display and build you
 
 var_dump( get_the_crumbs() );
 ```
+
+## Breadcrumb behaviour/approach for post types and taxonomies
+
+As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. We decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This is intended to match WordPress behaviour/approach.
 
 ## Watch it, Star it, Fork it
 
