@@ -38,7 +38,7 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
-- [Breadcrumb behaviour/approach for post types and taxonomies](https://github.com/amarinediary/Where-Is-My-Bread#breadcrumb-behaviourapproach-for-post-types-and-taxonomies)
+- [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/Where-Is-My-Bread#breadcrumb-behaviour-for-post-types-and-taxonomies)
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
 In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
@@ -193,9 +193,11 @@ Even tho we recommend you to use `the_bread()` function to display and build you
 var_dump( get_the_crumbs() );
 ```
 
-## Breadcrumb behaviour/approach for post types and taxonomies
+## Breadcrumb behaviour for post types and taxonomies
 
-As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. We decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This is intended to match WordPress behaviour/approach.
+As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. Each request has to be against a term or a post: Accessing `https://example.com/category/my-term/` will return a `200` HTTP status code, but trying to access the root crumb, `https://example.com/category/`, will return a `404` HTTP status code.
+
+Having that in mind, we decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This approach is intended to match WordPress behaviour.
 
 ## Watch it, Star it, Fork it
 
