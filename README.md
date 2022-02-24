@@ -202,7 +202,7 @@ Having that in mind, we decided to filter out each post types and taxonomies roo
 
 ## Localhost development issue
 
-This is a known issue. The breadcrumb in localhost will reflect the wrong breadcrumb, this is only related to the localhost development folder architecture. This will not be reflected on a live site.
+This is a known issue. Crumbs on localhost will reflect the localhost development folder architecture. This will not be reflected on a live site.
 
 ## Watch it, Star it, Fork it
 
