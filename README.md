@@ -39,6 +39,7 @@ Let us know how we can improve this plugin. Either [Open a new issue](https://gi
 - [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
 - [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/Where-Is-My-Bread#breadcrumb-behaviour-for-post-types-and-taxonomies)
+- [Localhost development issue](https://github.com/amarinediary/Where-Is-My-Bread#localhost-development-issue)
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
 In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
@@ -198,6 +199,10 @@ var_dump( get_the_crumbs() );
 As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. Each request has to be against a term or a post: Accessing `https://example.com/category/my-term/` will return a `200` HTTP status code, but trying to access the root crumb, `https://example.com/category/`, will return a `404` HTTP status code.
 
 Having that in mind, we decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This approach is intended to match WordPress behaviour.
+
+## Localhost development issue
+
+This is a known issue. The breadcrumb in localhost will reflect the wrong breadcrumb, this is only related to the localhost development folder architecture. This will not be reflected on a live site.
 
 ## Watch it, Star it, Fork it
 
