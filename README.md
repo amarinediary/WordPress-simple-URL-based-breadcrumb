@@ -204,6 +204,6 @@ Having that in mind, we decided to filter out each post types and taxonomies roo
 
 This is a known issue. Crumbs on localhost will reflect the localhost development folder architecture. This will not be reflected on a live site.
 
-## Watch it, Star it, Fork it
+## Watch it, Star it, Fork it !
 
 We made your day? Give us a star!
