@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Text Domain: where-is-my-bread
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * Description: A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-invasive WordPress unofficial plugin, both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Requires at least: 3.0.0
  * Requires PHP: 8.0.0
- * Tested up to: 5.9.0
+ * Tested up to: 6.0.1
  * Author: amarinediary
  * Author URI: https://github.com/amarinediary
  * License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
@@ -40,31 +40,74 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
      */
     function get_the_crumbs() {
 
-        $flour = $_SERVER['REQUEST_URI'];
+        /**
+         * This is an alternative to $server_scheme.
+         * 
+         * Article "Is $server_scheme reliable?".
+         * @see https://stackoverflow.com/a/18008178/3645650
+         * 
+         * $server_scheme is a native variable of Apache web server since its version 2.4.
+         * Naturally, if a variable is not set by the server, PHP will not include it in its global array $_SERVER.
+         * 
+         * An alternative to $server_scheme is $_SERVER['HTTPS'] which set to a non-empty value if the script was queried through the HTTPS protocol.
+         * 
+         * Article "How to find out if you're using HTTPS without $_SERVER['HTTPS']".
+         * @see https://stackoverflow.com/q/1175096/3645650
+         */
 
-        if ( str_contains( $flour, '?' ) ) {
+        if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' ) {
 
-            $flour = substr( $flour, 0, strpos( $flour, '?' ) );
+            $server_scheme = 'https';
 
-        };
-
-        if ( str_ends_with( $flour, '/' ) ) {
-
-            $flour = explode( '/', substr( $flour, 1, -1 ) );
+        } elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' || ! empty( $_SERVER['HTTP_X_FORWARDED_SSL'] ) && $_SERVER['HTTP_X_FORWARDED_SSL'] == 'on' ) {
+            
+            $server_scheme = 'https';
 
         } else {
 
-            $flour = explode( '/', substr( $flour, 1 ) );
+            $server_scheme = 'http';
+
+        };
+        
+        /**
+         * Compared to the previous issue, $_SERVER['REQUEST_URI'] will not be empty in WordPress, because it is filled in wp_fix_server_vars() (file wp-includes/load.php).
+         * 
+         * Article "Is it safe to use $_SERVER['REQUEST_URI']?".
+         * @see https://wordpress.stackexchange.com/a/110541/190376
+         */
+        $server_uri = $_SERVER['REQUEST_URI'];
+
+        /**
+         * As for , $server_host seems to be reliable.
+         * 
+         * Article "How reliable is HTTP_HOST?".
+         * @see https://stackoverflow.com/a/4096246/3645650
+         */
+        $server_host = $_SERVER["HTTP_HOST"];
+
+        if ( str_contains( $server_uri, '?' ) ) {
+
+            $server_uri = substr( $server_uri, 0, strpos( $server_uri, '?' ) );
+
+        };
+
+        if ( str_ends_with( $server_uri, '/' ) ) {
+
+            $server_uri = explode( '/', substr( $server_uri, 1, -1 ) );
+
+        } else {
+
+            $server_uri = explode( '/', substr( $server_uri, 1 ) );
 
         };
 
         $crumbs = array();
 
-        foreach ( $flour as $crumb ) {
+        foreach ( $server_uri as $crumb ) {
 
             $slug = esc_html( urldecode( $crumb ) );
 
-            $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $crumb ) ) . $crumb. '/' );
+            $url = esc_url( $server_scheme . '://' . $server_host . '/' . substr( implode( '/', $server_uri ), 0, strpos( implode( '/', $server_uri ), $crumb ) ) . $crumb. '/' );
 
             array_push( $crumbs, 
                 array(
@@ -121,7 +164,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
             $slug = esc_html( $banned_slug );
 
-            $url = esc_url( $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . substr( implode( '/', $flour ), 0, strpos( implode( '/', $flour ), $banned_slug ) ) . $banned_slug. '/' );
+            $url = esc_url( $server_scheme . '://' . $server_host . '/' . substr( implode( '/', $server_uri ), 0, strpos( implode( '/', $server_uri ), $banned_slug ) ) . $banned_slug. '/' );
 
             array_push( $banned_crumbs, 
                 array(
