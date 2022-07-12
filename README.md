@@ -6,15 +6,14 @@ A URL based WordPress breadcrumb, unstyled, minimalist and SEO friendly. A non-i
 |-|-|
 |Requires at least WordPress:|`3.0.0`|
 |Requires PHP:|`8.0.0`|
-|Tested up to WordPress:|`5.9.0`|
-|Current plugin version:|`1.0.6`|
+|Tested up to WordPress:|`6.0.1`|
+|Current plugin version:|`1.0.7`|
 
 ### Latest changelog
 
-#### `1.0.6`
-- - [x] Fix an issue where the url wasn't properly decoded. Wrapping the crumb slug through `urldecode()`.
-- - [x] [Emphasis on WordPress PHP coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
-- Special thanks to [@hanyseyedy](https://github.com/hanyseyedy) for pointing out a few issues in `1.0.5`.
+#### `1.0.7`
+- - [x] Alternative way to determine the server scheme.
+- Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) an issue in `1.0.6`.
 
 We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose) to share what's on your mind.
 
