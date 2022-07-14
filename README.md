@@ -7,35 +7,35 @@ A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both li
 |Requires at least WordPress:|`3.0.0`|
 |Requires PHP:|`8.0.0`|
 |Tested up to WordPress:|`6.0.1`|
-|Current plugin version:|`1.0.7`|
+|Current plugin version:|`1.1.0`|
 
 ### Latest changelog
 
-#### `1.0.7`
-- - [x] Alternative way to determine the server scheme.
+#### `1.1.0`
+- [x] Renamed the whole project to WordPress simple URL based breadcrumb 🍞.
 - Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) an issue in `1.0.6`.
 
-We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose) to share what's on your mind.
+We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose) to share what's on your mind.
 
 ## Give us feedback 🙏
 
-Let us know how we can improve this plugin, [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
+Let us know how we can improve this plugin, [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose).
 
 ## Table of contents
 
-- [Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.](https://github.com/amarinediary/Where-Is-My-Bread#discrepancies-between-google-schema-validation-tools-and-the-google-search-console-enhancement-reports-and-performance-reports)
-- [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/Where-Is-My-Bread#displaying-the-bread-a-formatted-crumbs-list)
-- [Parameters](https://github.com/amarinediary/Where-Is-My-Bread#parameters)
-- [Example: The bread with a custom separator](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-custom-separator)
-- [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/Where-Is-My-Bread#example-displaying-the-last-3-crumbs)
-- [Example: The bread with a root crumb](https://github.com/amarinediary/Where-Is-My-Bread#example-the-bread-with-a-root-crumb)
-- [HTML5 structure output](https://github.com/amarinediary/Where-Is-My-Bread#html5-structure-output)
-- [Styling](https://github.com/amarinediary/Where-Is-My-Bread#styling)
-- [Minimal css boilerplate (Optional)](https://github.com/amarinediary/Where-Is-My-Bread#minimal-css-boilerplate-optional)
-- [Retrieving the crumbs](https://github.com/amarinediary/Where-Is-My-Bread#retrieving-the-crumbs)
-- [Example: Ouputing the crumbs object](https://github.com/amarinediary/Where-Is-My-Bread#example-ouputing-the-crumbs-object)
-- [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/Where-Is-My-Bread#breadcrumb-behaviour-for-post-types-and-taxonomies)
-- [Localhost development issue](https://github.com/amarinediary/Where-Is-My-Bread#localhost-development-issue)
+- [Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#discrepancies-between-google-schema-validation-tools-and-the-google-search-console-enhancement-reports-and-performance-reports)
+- [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#displaying-the-bread-a-formatted-crumbs-list)
+- [Parameters](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#parameters)
+- [Example: The bread with a custom separator](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-the-bread-with-a-custom-separator)
+- [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-displaying-the-last-3-crumbs)
+- [Example: The bread with a root crumb](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-the-bread-with-a-root-crumb)
+- [HTML5 structure output](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#html5-structure-output)
+- [Styling](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#styling)
+- [Minimal css boilerplate (Optional)](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#minimal-css-boilerplate-optional)
+- [Retrieving the crumbs](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#retrieving-the-crumbs)
+- [Example: Ouputing the crumbs object](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-ouputing-the-crumbs-object)
+- [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#breadcrumb-behaviour-for-post-types-and-taxonomies)
+- [Localhost development issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#localhost-development-issue)
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
 In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
