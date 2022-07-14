@@ -49,7 +49,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
          * $server_scheme is a native variable of Apache web server since its version 2.4.
          * Naturally, if a variable is not set by the server, PHP will not include it in its global array $_SERVER.
          * 
-         * An alternative to $server_scheme is $_SERVER['HTTPS'] which set to a non-empty value if the script was queried through the HTTPS protocol.
+         * An alternative to $_SERVER['REQUEST_SCHEME'] is $_SERVER['HTTPS'] which set to a non-empty value if the script was queried through the HTTPS protocol.
          * 
          * Article "How to find out if you're using HTTPS without $_SERVER['HTTPS']".
          * @see https://stackoverflow.com/q/1175096/3645650
