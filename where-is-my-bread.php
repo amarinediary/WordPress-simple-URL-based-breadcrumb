@@ -78,7 +78,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         $server_uri = $_SERVER['REQUEST_URI'];
 
         /**
-         * As for , $server_host seems to be reliable.
+         * As for , $_SERVER["HTTP_HOST"] seems to be reliable.
          * 
          * Article "How reliable is HTTP_HOST?".
          * @see https://stackoverflow.com/a/4096246/3645650
