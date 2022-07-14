@@ -41,7 +41,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
     function get_the_crumbs() {
 
         /**
-         * This is an alternative to $_SERVER['REQUEST_SCHEME'].
+         * $_SERVER["REQUEST_URI"] seems to be unreliable.
          * 
          * Article "Is $_SERVER['REQUEST_SCHEME'] reliable?".
          * @see https://stackoverflow.com/a/18008178/3645650
@@ -70,7 +70,8 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         };
         
         /**
-         * Compared to the previous issue, $_SERVER['REQUEST_URI'] will not be empty in WordPress, because it is filled in wp_fix_server_vars() (file wp-includes/load.php).
+         * $_SERVER["REQUEST_URI"] seems to be reliable.
+         * $_SERVER['REQUEST_URI'] will not be empty in WordPress, because it is filled in wp_fix_server_vars() (file wp-includes/load.php).
          * 
          * Article "Is it safe to use $_SERVER['REQUEST_URI']?".
          * @see https://wordpress.stackexchange.com/a/110541/190376
@@ -78,7 +79,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         $server_uri = $_SERVER['REQUEST_URI'];
 
         /**
-         * As for , $_SERVER["HTTP_HOST"] seems to be reliable.
+         * $_SERVER["HTTP_HOST"] seems to be reliable.
          * 
          * Article "How reliable is HTTP_HOST?".
          * @see https://stackoverflow.com/a/4096246/3645650
