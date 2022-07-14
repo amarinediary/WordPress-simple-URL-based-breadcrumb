@@ -19,7 +19,7 @@ We are looking for ideas on how the search breadcrumb should be handled (with/wi
 
 ## Give us feedback 🙏
 
-Let us know how we can improve this plugin. Either [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose) or if you don't have a GitHub account you can give us feedback through the following Google [Where-Is-My-Bread Plugin Feedback Form](https://forms.gle/m9PM6dEX8aZrmedG9). (No account required).
+Let us know how we can improve this plugin, [Open a new issue](https://github.com/amarinediary/Where-Is-My-Bread/issues/new/choose).
 
 ## Table of contents
 
