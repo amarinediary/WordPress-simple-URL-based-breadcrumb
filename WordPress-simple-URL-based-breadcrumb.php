@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Text Domain: wordpress-simple-url-based-breadcrumb
  * Plugin URI: https://github.com/amarinediary/Where-Is-My-Bread
  * Description: A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
- * Version: 1.0.8
+ * Version: 1.1.0
  * Requires at least: 3.0.0
  * Requires PHP: 8.0.0
  * Tested up to: 6.0.1
