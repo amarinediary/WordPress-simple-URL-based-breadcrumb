@@ -41,9 +41,9 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
     function get_the_crumbs() {
 
         /**
-         * This is an alternative to $server_scheme.
+         * This is an alternative to $_SERVER['REQUEST_SCHEME'].
          * 
-         * Article "Is $server_scheme reliable?".
+         * Article "Is $_SERVER['REQUEST_SCHEME'] reliable?".
          * @see https://stackoverflow.com/a/18008178/3645650
          * 
          * $server_scheme is a native variable of Apache web server since its version 2.4.
