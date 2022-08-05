@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Text Domain: wordpress-simple-url-based-breadcrumb
  * Plugin URI: https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb
  * Description: A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Requires at least: 3.0.0
  * Requires PHP: 7.0.0
  * Tested up to: 6.0.1
@@ -22,12 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * GitHub Plugin URI: https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb
  * GitHub Branch: main
  */
-
-if ( version_compare( PHP_VERSION, '8.0.0', '<' ) ) {
-
-    return;
-
-};
 
 /**
  * Checks if a string ends with a given substring.
