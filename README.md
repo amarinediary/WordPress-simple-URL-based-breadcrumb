@@ -11,7 +11,7 @@ A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both li
 
 ### Latest changelog
 
-#### `1.1.0`
+#### `1.2.0`
 - [x] Renamed the whole project to WordPress simple URL based breadcrumb 🍞.
 - [x] 1.1.0 is production ready.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
@@ -25,7 +25,6 @@ Let us know how we can improve this plugin, [Open a new issue](https://github.co
 
 ## Table of contents
 
-- [Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#discrepancies-between-google-schema-validation-tools-and-the-google-search-console-enhancement-reports-and-performance-reports)
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#displaying-the-bread-a-formatted-crumbs-list)
 - [Parameters](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#parameters)
 - [Example: The bread with a custom separator](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-the-bread-with-a-custom-separator)
@@ -37,24 +36,8 @@ Let us know how we can improve this plugin, [Open a new issue](https://github.co
 - [Retrieving the crumbs](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-ouputing-the-crumbs-object)
 - [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#breadcrumb-behaviour-for-post-types-and-taxonomies)
+- [Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#discrepancies-between-google-schema-validation-tools-and-the-google-search-console-enhancement-reports-and-performance-reports)
 - [Localhost development issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#localhost-development-issue)
-
-## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
-In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
-
-Since the January 31 2022, validation coming from the Google Search Console seems to currently be inaccurate. This is probably due to the recent update to the Google Search Console:
-
-> Search Console has changed the way that it evaluates and reports errors in Breadcrumbs and HowTo structured data. As a result, you may see changes in the number of Breadcrumbs > and HowTo entities and issues reported for your property, as well as a change in severity of some issues from errors to warnings.
-
-- Source @ [Data anomalies in Search Console](https://support.google.com/webmasters/answer/6211453?hl=en#zippy=%2Crich-result-reports)
-
-> [...] Our team has investigated a couple of instances where this search verifies that the markup is there, despite the disagreement with Search Console and has found a solution, where the errors decline steadily over the course of a few days [...]
-
-It would seems that the issue is coming from the Google Bot validation itelf and not the structured data of the plugin. We will continue to monitor the situation as 2022 unfold.
-
-Additional Source:
-- [How To Resolve Misattributed Errors In The New Google Search Console](https://www.schemaapp.com/schema-markup/how-to-resolve-misattributed-errors-in-the-new-google-search-console/)
-- [Discrepancies in Google Search Console: Enhancement Reports vs. Performance Reports](https://support.schemaapp.com/support/solutions/articles/33000267425-discrepancies-in-google-search-console-enhancement-reports-vs-performance-reports)
 
 ## Displaying the bread, a formatted crumbs list.
 
@@ -197,6 +180,23 @@ var_dump( get_the_crumbs() );
 As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. Each request has to be against a term or a post: Accessing `https://example.com/category/my-term/` will return a `200` HTTP status code, but trying to access the root crumb, `https://example.com/category/`, will return a `404` HTTP status code.
 
 Having that in mind, we decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This approach is intended to match WordPress behaviour.
+
+## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
+In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
+
+Since the January 31 2022, validation coming from the Google Search Console seems to currently be inaccurate. This is probably due to the recent update to the Google Search Console:
+
+> Search Console has changed the way that it evaluates and reports errors in Breadcrumbs and HowTo structured data. As a result, you may see changes in the number of Breadcrumbs > and HowTo entities and issues reported for your property, as well as a change in severity of some issues from errors to warnings.
+
+- Source @ [Data anomalies in Search Console](https://support.google.com/webmasters/answer/6211453?hl=en#zippy=%2Crich-result-reports)
+
+> [...] Our team has investigated a couple of instances where this search verifies that the markup is there, despite the disagreement with Search Console and has found a solution, where the errors decline steadily over the course of a few days [...]
+
+It would seems that the issue is coming from the Google Bot validation itelf and not the structured data of the plugin. We will continue to monitor the situation as 2022 unfold.
+
+Additional Source:
+- [How To Resolve Misattributed Errors In The New Google Search Console](https://www.schemaapp.com/schema-markup/how-to-resolve-misattributed-errors-in-the-new-google-search-console/)
+- [Discrepancies in Google Search Console: Enhancement Reports vs. Performance Reports](https://support.schemaapp.com/support/solutions/articles/33000267425-discrepancies-in-google-search-console-enhancement-reports-vs-performance-reports)
 
 ## Localhost development issue
 
