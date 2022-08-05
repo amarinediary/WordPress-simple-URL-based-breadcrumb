@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 /**
- * Checks if a string ends with a given substring.
+ * Checks if a string ends with a given substring..
  * 
  * Backward compatibility for PHP < 8.0.0
  * 
