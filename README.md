@@ -5,17 +5,17 @@ A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both li
 ||Version|
 |-|-|
 |Requires at least WordPress:|`3.0.0`|
-|Requires PHP:|`8.0.0`|
+|Requires PHP:|`7.0.0`|
 |Tested up to WordPress:|`6.0.1`|
-|Current plugin version:|`1.1.0`|
+|Current plugin version:|`1.2.0`|
 
 ### Latest changelog
 
 #### `1.2.0`
-- [x] Renamed the whole project to WordPress simple URL based breadcrumb 🍞.
-- [x] 1.1.0 is production ready.
+- [x] Backward compatibility for PHP 7.0.0`.
+- [x] production ready since 1.1.0.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
-- Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) an issue in `1.0.6`.
+- Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) for pointing out possible improvements in `1.1.0`.
 
 We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose) to share what's on your mind.
 
