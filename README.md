@@ -37,7 +37,7 @@ Let us know how we can improve this plugin, [Open a new issue](https://github.co
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-ouputing-the-crumbs-object)
 - [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#breadcrumb-behaviour-for-post-types-and-taxonomies)
 - [Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#discrepancies-between-google-schema-validation-tools-and-the-google-search-console-enhancement-reports-and-performance-reports)
-- [Localhost development issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#localhost-development-issue)
+- [Localhost development](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#localhost-development)
 
 ## Displaying the bread, a formatted crumbs list.
 
@@ -182,7 +182,7 @@ As WordPress doesn't create a default root crumb index page for post types and t
 Having that in mind, we decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This approach is intended to match WordPress behaviour.
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
-In the event your Breadcrumb isn't successfully passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data) :
+In the event your Breadcrumb isn't successfully passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data):
 
 Since the January 31 2022, validation coming from the Google Search Console seems to currently be inaccurate. This is probably due to the recent update to the Google Search Console:
 
@@ -198,9 +198,9 @@ Additional Source:
 - [How To Resolve Misattributed Errors In The New Google Search Console](https://www.schemaapp.com/schema-markup/how-to-resolve-misattributed-errors-in-the-new-google-search-console/)
 - [Discrepancies in Google Search Console: Enhancement Reports vs. Performance Reports](https://support.schemaapp.com/support/solutions/articles/33000267425-discrepancies-in-google-search-console-enhancement-reports-vs-performance-reports)
 
-## Localhost development issue
+## Localhost development
 
-This is a known issue. Crumbs on localhost will reflect the localhost development folder architecture. This will not be reflected on a live site.
+As we are just parsing the url, crumbs on a localhost environement will reflect the development folder architecture. This will not be reflected on a live site.
 
 ## Watch it, Star it, Fork it !
 
