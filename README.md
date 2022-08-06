@@ -200,7 +200,7 @@ Additional Source:
 
 ## Localhost development
 
-As we are just parsing the url, crumbs on a localhost environement will reflect the development folder architecture. This will not be reflected on a live site.
+As we are just parsing the url, crumbs on a localhost environement will reflect the development folder architecture. This will not be reflected on a live site. For example: `Home > Www > Wordpress > My awesome post` in localhost will result in `Home > My awesome post` on a live website.
 
 ## Watch it, Star it, Fork it !
 
