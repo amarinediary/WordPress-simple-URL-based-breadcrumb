@@ -1,6 +1,6 @@
-# WordPress simple URL based breadcrumb 🍞
+# WordPress simple URL based breadcrumb
 
-A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
+🍞 A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
 
 ||Version|
 |-|-|
