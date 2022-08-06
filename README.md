@@ -182,7 +182,7 @@ As WordPress doesn't create a default root crumb index page for post types and t
 Having that in mind, we decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This approach is intended to match WordPress behaviour.
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
-In the event your Breadcrumb is passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data).
+In the event your Breadcrumb isn't successfully passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data) :
 
 Since the January 31 2022, validation coming from the Google Search Console seems to currently be inaccurate. This is probably due to the recent update to the Google Search Console:
 
