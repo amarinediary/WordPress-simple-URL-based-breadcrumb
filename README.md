@@ -13,7 +13,7 @@ A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both li
 
 #### `1.2.0`
 - [x] Backward compatibility for PHP 7 (onwards).
-- [x] Production ready since 1.1.0.
+- [x] Production ready since `1.1.0`.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
 - Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) for pointing out possible improvements in `1.1.0`.
 
