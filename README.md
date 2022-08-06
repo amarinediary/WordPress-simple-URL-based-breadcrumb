@@ -12,7 +12,7 @@ A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both li
 ### Latest changelog
 
 #### `1.2.0`
-- [x] Backward compatibility for PHP 7 (onwards).
+- [x] Backward compatibility for PHP 7 (onwards) (Removed `str_ends_with` and `str_contains` native functions usage which were dependend on PHP > 8. Added `backward_compatibility_str_ends_with` and `backward_compatibility_str_contains` as a mean to support PHP > 7).
 - [x] Production ready since `1.1.0`.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
 - [x] [README.md](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/blob/main/README.md) updates. 
