@@ -8,7 +8,7 @@
 |Requires PHP:|`7.0.0`|
 |[Tested up to WordPress:](https://wordpress.org/download/releases/)|`6.0.1`|
 |Current plugin version:|`1.2.0`|
-|[Current stable plugin version:](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.1.0)|`1.1.0`|
+|[Current stable plugin version:](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.1.0)|`1.2.0`|
 
 ### Latest changelog
 
