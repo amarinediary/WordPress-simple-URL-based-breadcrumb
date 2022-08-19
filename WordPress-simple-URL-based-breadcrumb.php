@@ -87,18 +87,18 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
     function get_the_crumbs() {
 
         /**
-         * $_SERVER["REQUEST_URI"] seems to be unreliable.
+         * $_SERVER["REQUEST_SCHEME"] seems to be UNRELIABLE.
          * 
          * Article "Is $_SERVER['REQUEST_SCHEME'] reliable?".
          * @see https://stackoverflow.com/a/18008178/3645650
          * 
-         * $server_scheme is a native variable of Apache web server since its version 2.4.
+         * $_SERVER['REQUEST_SCHEME'] is a native variable of Apache web server since its version 2.4.
          * Naturally, if a variable is not set by the server, PHP will not include it in its global array $_SERVER.
          * 
          * An alternative to $_SERVER['REQUEST_SCHEME'] is $_SERVER['HTTPS'] which set to a non-empty value if the script was queried through the HTTPS protocol.
          * 
          * Article "How to find out if you're using HTTPS without $_SERVER['HTTPS']".
-         * @see https://stackoverflow.com/q/1175096/3645650
+         * @see https://stackoverflow.com/a/16076965/3645650
          */
 
         if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' ) {
@@ -116,7 +116,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         };
         
         /**
-         * $_SERVER["REQUEST_URI"] seems to be reliable.
+         * $_SERVER["REQUEST_URI"] seems to be RELIABLE.
          * $_SERVER['REQUEST_URI'] will not be empty in WordPress, because it is filled in wp_fix_server_vars() (file wp-includes/load.php).
          * 
          * Article "Is it safe to use $_SERVER['REQUEST_URI']?".
@@ -125,7 +125,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
         $server_uri = $_SERVER['REQUEST_URI'];
 
         /**
-         * $_SERVER["HTTP_HOST"] seems to be reliable.
+         * $_SERVER["HTTP_HOST"] seems to be RELIABLE.
          * 
          * Article "How reliable is HTTP_HOST?".
          * @see https://stackoverflow.com/a/4096246/3645650
@@ -294,7 +294,7 @@ if ( ! function_exists( 'the_bread' ) ) {
             array_unshift( $crumbs, $ingredients['root'] );
 
         };
-
+        
         $crumbs = array_slice( $crumbs, $offset, $length );
 
         if ( ! empty( $crumbs ) ) {
