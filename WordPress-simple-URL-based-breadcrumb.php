@@ -25,12 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Checks if a string ends with a given substring.
- * 
  * Backward compatibility for PHP < 8.0.0
- * 
+ *
+ * @since 1.2.0
  * @param String $haystack
  * @param String $needle
- * 
  * @return Boolean
  */
 if ( ! function_exists( 'backward_compatibility_str_ends_with' ) ) {
@@ -53,12 +52,11 @@ if ( ! function_exists( 'backward_compatibility_str_ends_with' ) ) {
 
 /**
  * Determine if a string contains a given substring.
- * 
  * Backward compatibility for PHP < 8.0.0
- * 
+ *
+ * @since 1.2.0
  * @param String $haystack
  * @param String $needle
- * 
  * @return Boolean
  */
 if ( ! function_exists( 'backward_compatibility_str_contains' ) ) {
@@ -79,7 +77,6 @@ if ( ! function_exists( 'backward_compatibility_str_contains' ) ) {
  * Retrieve the crumbs.
  * 
  * @since 1.0.0
- *
  * @return Array Crumbs array.
  */
 if ( ! function_exists( 'get_the_crumbs' ) ) {
@@ -242,7 +239,6 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
  * Display the bread, a formatted crumbs list.
  * 
  * @since 1.0.0
- * 
  * @param   Array   $ingredients                    The bread arguments.
  * @param   Array   $ingredients['root']            Root crumb. Default to null.
  * @param   String  $ingredients['root']['slug']    Root crumb slug.
@@ -250,7 +246,6 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
  * @param   String  $ingredients['separator']       The crumb's separator. The separator is not escaped.
  * @param   Integer $ingredients['offset']          Crumbs offset. Accept positive/negative Integer. Default to "0". Refer to array_slice, https://www.php.net/manual/en/function.array-slice.php.
  * @param   Integer $ingredients['length']          Crumbs length. Accept positive/negative Integer. Default to "null". Refer to array_slice, https://www.php.net/manual/en/function.array-slice.php.
- * 
  * @return  Array   The formatted crumbs list.
  */
 if ( ! function_exists( 'the_bread' ) ) {
