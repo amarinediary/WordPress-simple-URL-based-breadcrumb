@@ -11,12 +11,11 @@
 
 ### Latest changelog
 
-#### `1.2.0`
-- [x] Backward compatibility for PHP 7 (onwards) (Removed [`str_ends_with`](https://www.php.net/manual/en/function.str-ends-with.php) and [`str_contains`](https://www.php.net/manual/en/function.str-contains.php) native functions usage which were dependend on PHP > 8. Added `backward_compatibility_str_ends_with` and `backward_compatibility_str_contains` functions, as a mean to support PHP > 7).
+#### `1.2.1`
+- [x] Code commenting improvements.
 - [x] Production ready since `1.1.0`.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
 - [x] [README.md](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/blob/main/README.md) updates. 
-- Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) for pointing out possible improvements in `1.1.0`.
 
 We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose) to share what's on your mind.
 
