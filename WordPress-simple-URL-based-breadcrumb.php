@@ -27,10 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Checks if a string ends with a given substring.
  * Backward compatibility for PHP < 8.0.0
  *
- * @since 1.2.0
- * @param String $haystack
- * @param String $needle
- * @return Boolean
+ * @since   1.2.0
+ * @param   String  $haystack   The string to search in.
+ * @param   String  $needle     The substring to search for in the haystack.
+ * @return  Boolean
  */
 if ( ! function_exists( 'backward_compatibility_str_ends_with' ) ) {
 
@@ -54,10 +54,10 @@ if ( ! function_exists( 'backward_compatibility_str_ends_with' ) ) {
  * Determine if a string contains a given substring.
  * Backward compatibility for PHP < 8.0.0
  *
- * @since 1.2.0
- * @param String $haystack
- * @param String $needle
- * @return Boolean
+ * @since   1.2.0
+ * @param   String  $haystack   The string to search in.
+ * @param   String  $needle     The substring to search for in the haystack.
+ * @return  Boolean
  */
 if ( ! function_exists( 'backward_compatibility_str_contains' ) ) {
 
@@ -76,8 +76,8 @@ if ( ! function_exists( 'backward_compatibility_str_contains' ) ) {
 /**
  * Retrieve the crumbs.
  * 
- * @since 1.0.0
- * @return Array Crumbs array.
+ * @since   1.0.0
+ * @return  Array   Crumbs array.
  */
 if ( ! function_exists( 'get_the_crumbs' ) ) {
 
@@ -238,7 +238,7 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 /**
  * Display the bread, a formatted crumbs list.
  * 
- * @since 1.0.0
+ * @since   1.0.0
  * @param   Array   $ingredients                    The bread arguments.
  * @param   Array   $ingredients['root']            Root crumb. Default to null.
  * @param   String  $ingredients['root']['slug']    Root crumb slug.
