@@ -26,8 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Checks if a string ends with a given substring.
  * Backward compatibility for PHP < 8.0.0.
- * The more advanced and optimized way should be to use the native str_ends_with() function.
- * @see https://www.php.net/manual/en/function.str-ends-with.php
  *
  * @since   1.2.0
  * @param   String  $haystack   The string to search in.
@@ -55,8 +53,6 @@ if ( ! function_exists( 'backward_compatibility_str_ends_with' ) ) {
 /**
  * Determine if a string contains a given substring.
  * Backward compatibility for PHP < 8.0.0.
- * The more advanced and optimized way should be to use the native str_contains() function.
- * @see https://www.php.net/manual/en/function.str-contains.php
  *
  * @since   1.2.0
  * @param   String  $haystack   The string to search in.
