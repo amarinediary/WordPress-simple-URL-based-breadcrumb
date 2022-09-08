@@ -7,7 +7,7 @@
 |Requires at least WordPress:|`5.0.0`|
 |Requires PHP:|`7.0.0`|
 |[Tested up to WordPress:](https://wordpress.org/download/releases/)|`6.0.1`|
-|[Current plugin version:](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.2.1)|`1.2.1`|
+|[Current plugin version:](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.2.2)|`1.2.2`|
 
 ### Latest changelog
 
