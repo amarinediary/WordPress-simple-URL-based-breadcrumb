@@ -11,11 +11,13 @@
 
 ### Latest changelog
 
-#### `1.2.1`
+#### `1.2.2`
+- [x] Custom post types crumbs are now being displayed correctly.
+- [x] You can now intercept the crumbs array. See [Example: Intercepting the crumbs array](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-intercepting-the-crumbs-array).
 - [x] Code commenting improvements.
-- [x] Production ready since `1.1.0`.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
-- [x] [README.md](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/blob/main/README.md) updates. 
+- [x] [README.md](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/blob/main/README.md) updates.
+- Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) for the feedback.
 
 We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose) to share what's on your mind.
 
@@ -30,12 +32,13 @@ Let us know how we can improve this plugin, [Open a new issue](https://github.co
 - [Example: The bread with a custom separator](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-the-bread-with-a-custom-separator)
 - [Example: Displaying the last 3 crumbs](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-displaying-the-last-3-crumbs)
 - [Example: The bread with a root crumb](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-the-bread-with-a-root-crumb)
+- [Example: Intercepting the crumbs array](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-intercepting-the-crumbs-array)
 - [HTML5 structure output](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#html5-structure-output)
 - [Styling](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#styling)
 - [Minimal css boilerplate (Optional)](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#minimal-css-boilerplate-optional)
 - [Retrieving the crumbs](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#retrieving-the-crumbs)
 - [Example: Ouputing the crumbs object](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-ouputing-the-crumbs-object)
-- [Breadcrumb behaviour for post types and taxonomies](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#breadcrumb-behaviour-for-post-types-and-taxonomies)
+- [Breadcrumb behaviour and taxonomies](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#breadcrumb-behaviour-and-taxonomies)
 - [Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#discrepancies-between-google-schema-validation-tools-and-the-google-search-console-enhancement-reports-and-performance-reports)
 - [Localhost development](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#localhost-development)
 
@@ -51,7 +54,8 @@ the_bread( $ingredients = array() );
 
 |Parameter|Description|
 |-|-|
-|`$ingredients`|(Optional) `Array` of arguments for displaying the bread.|
+|`$ingredients`|(Optional) `Array` The bread arguments.|
+|`$ingredients['crumbs']`|`Array` The crumbs array. Default to `get_the_crumbs()`.|
 |`$ingredients['root']`|`Array` Root crumb. Default to `null`.|
 |`$ingredients['root']['slug']`|(Required if `$ingredients['root']`). Root crumb slug.|
 |`$ingredients['root']['url']`|(Required if `$ingredients['root']`). Root crumb url.|
@@ -94,6 +98,28 @@ $ingredients = array(
         'slug' => 'home',
         'url' => get_home_url(),
     ),
+);
+
+the_bread( $ingredients );
+```
+
+### Example: Intercepting the crumbs array
+
+```php
+<?php
+
+//Intercept the crumbs array...
+$crumbs = get_the_crumbs();
+
+//... Do something with it:
+//In our case we're appending a new crumb to the crumbs array.
+array_push( $crumbs, array(
+    'slug' => 'search',
+    'url' => 'https://.../search/',
+) );
+
+$ingredients = array(
+    'crumbs' => $crumbs,
 );
 
 the_bread( $ingredients );
@@ -175,11 +201,11 @@ Even tho we recommend you to use `the_bread()` function to display and build you
 var_dump( get_the_crumbs() );
 ```
 
-## Breadcrumb behaviour for post types and taxonomies
+## Breadcrumb behaviour and taxonomies
 
-As WordPress doesn't create a default root crumb index page for post types and taxonomies, you often end up with that crumb redirecting to a 404. Each request has to be against a term or a post: Accessing `https://example.com/category/my-term/` will return a `200` HTTP status code, but trying to access the root crumb, `https://example.com/category/`, will return a `404` HTTP status code.
+As WordPress doesn't create a default root crumb index page for taxonomies, you often end up with a crumb redirecting to a 404. Each request has to be made against a term: Accessing `https://.../taxonomy/my-term/` will return a `200` status code, but trying to access the root crumb, `https://.../taxonomy/`, will return a `404`.
 
-Having that in mind, we decided to filter out each post types and taxonomies root crumb. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any post types and taxonomies root crumb. This approach is intended to match WordPress behaviour.
+Having that in mind, we decided to filter out each taxonomies root crumbs. As a result, `get_the_crumbs()`, which is called by `the_bread()`, won't return any taxonomies root crumb. This approach is intended to match WordPress behaviour.
 
 ## Discrepancies between Google Schema Validation tools and the Google Search Console Enhancement Reports and Performance Reports.
 In the event your Breadcrumb isn't successfully passing both structured data testing tool from [Google Test your structured data](https://developers.google.com/search/docs/advanced/structured-data):
@@ -199,7 +225,7 @@ It would seems that the issue is coming from the Google Bot validation itelf and
 
 ## Localhost development
 
-As we are just parsing the url, crumbs on a localhost environement will reflect the development folder architecture. This will not be reflected on a live site. For example: `Home > Www > Wordpress > My awesome post` in localhost will result in `Home > My awesome post` on a live website.
+As we are reading and parsing the url, the crumbs on a localhost environement will reflect the development folder architecture. This will not be reflected on a live site. eg: `Home > Www > Wordpress > My awesome post` on a local branch, `Home > My awesome post` on a live branch.
 
 ## Watch it, Star it, Fork it !
 

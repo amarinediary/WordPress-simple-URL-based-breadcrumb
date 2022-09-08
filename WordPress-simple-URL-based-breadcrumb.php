@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Text Domain: wordpress-simple-url-based-breadcrumb
  * Plugin URI: https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb
  * Description: 🍞 A non-invasive WordPress unofficial plugin, minimalist and SEO friendly. both lightweight and lightning fast, adding URL based breadcrumb support. Plug-and-play, with no required configuration.
- * Version: 1.2.0
+ * Version: 1.2.2
  * Requires at least: 5.0.0
  * Requires PHP: 7.0.0
- * Tested up to: 6.0.1
+ * Tested up to: 6.0.2
  * Author: amarinediary
  * Author URI: https://github.com/amarinediary
  * License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
@@ -25,7 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Checks if a string ends with a given substring.
- * Backward compatibility for PHP < 8.0.0
+ * Backward compatibility for PHP < 8.0.0.
+ * The more advanced and optimized way should be to use the native str_ends_with() function.
+ * @see https://www.php.net/manual/en/function.str-ends-with.php
  *
  * @since   1.2.0
  * @param   String  $haystack   The string to search in.
@@ -52,7 +54,9 @@ if ( ! function_exists( 'backward_compatibility_str_ends_with' ) ) {
 
 /**
  * Determine if a string contains a given substring.
- * Backward compatibility for PHP < 8.0.0
+ * Backward compatibility for PHP < 8.0.0.
+ * The more advanced and optimized way should be to use the native str_contains() function.
+ * @see https://www.php.net/manual/en/function.str-contains.php
  *
  * @since   1.2.0
  * @param   String  $haystack   The string to search in.
@@ -162,26 +166,18 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
         };
 
+        /**
+         * WordPress, by default, doesn't generate a taxonomy index, meaning https://.../taxonomy will redirect to a 404.
+         * Any request needs to be made against a term. eg: https://.../taxonomy/term will redirect to taxonomy.php.
+         * Therefore we need to remove the taxonomy slug from the crumbs array to avoid displaying a link to a 404.
+         * 
+         * We round up all taxonomies through get_taxonomies(). 
+         * @see https://developer.wordpress.org/reference/functions/get_taxonomies/
+         * 
+         * Through array_filter we filter-out any matching crumbs.
+         * @see https://www.php.net/manual/en/function.array-filter.php
+         */
         $banned_slugs = array();
-        
-        $post_types = get_post_types( 
-            array(
-                'public' => true,
-            ),
-            'objects'
-        );
-
-        foreach ( $post_types as $post_type ) {
-
-            array_push( $banned_slugs, $post_type->name );
-
-            if ( isset( $post_type->rewrite['slug'] ) ) {
-            
-                array_push( $banned_slugs, $post_type->rewrite['slug'] );
-            
-            };
-
-        };
 
         $taxonomies = get_taxonomies( 
             array(
@@ -240,10 +236,11 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
  * 
  * @since   1.0.0
  * @param   Array   $ingredients                    The bread arguments.
+ * @param   Array   $ingredients['crumbs']          The crumbs array. Default to get_the_crumbs().
  * @param   Array   $ingredients['root']            Root crumb. Default to null.
  * @param   String  $ingredients['root']['slug']    Root crumb slug.
  * @param   String  $ingredients['root']['url']     Root crumb url.
- * @param   String  $ingredients['separator']       The crumb's separator. The separator is not escaped.
+ * @param   String  $ingredients['separator']       The crumb's separator.
  * @param   Integer $ingredients['offset']          Crumbs offset. Accept positive/negative Integer. Default to "0". Refer to array_slice, https://www.php.net/manual/en/function.array-slice.php.
  * @param   Integer $ingredients['length']          Crumbs length. Accept positive/negative Integer. Default to "null". Refer to array_slice, https://www.php.net/manual/en/function.array-slice.php.
  * @return  Array   The formatted crumbs list.
@@ -251,7 +248,17 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 if ( ! function_exists( 'the_bread' ) ) {
 
     function the_bread( $ingredients = array() ) {
+
+        if ( empty( $ingredients['crumbs'] ) ) {
         
+            $crumbs = get_the_crumbs();
+            
+        } else {
+        
+            $crumbs = $ingredients['crumbs'];
+            
+        };
+
         if ( empty( $ingredients['root'] ) ) {
         
             $root = null;
@@ -281,15 +288,23 @@ if ( ! function_exists( 'the_bread' ) ) {
             $length = $ingredients['length'];
             
         };
-        
-        $crumbs = get_the_crumbs();
 
+        /**
+         * Handling the root crumb case. 
+         * Prepend one or more elements to the beginning of an array.
+         * @see https://www.php.net/manual/en/function.array-unshift.php
+         */
         if ( ! empty( $root ) ) {
 
             array_unshift( $crumbs, $ingredients['root'] );
 
         };
         
+        /**
+         * Handling the length case.
+         * Extract a slice of the array.
+         * @see https://www.php.net/manual/en/function.array-slice.php
+         */
         $crumbs = array_slice( $crumbs, $offset, $length );
 
         if ( ! empty( $crumbs ) ) {
@@ -302,6 +317,9 @@ if ( ! function_exists( 'the_bread' ) ) {
 
                 $i++;
 
+                /**
+                 * Unparsing the slug.
+                 */
                 if ( url_to_postid( $crumb['url'] ) ) {
 
                     $title = get_the_title( url_to_postid( $crumb['url'] ) );
