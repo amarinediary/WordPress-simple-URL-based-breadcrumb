@@ -113,10 +113,23 @@ $crumbs = get_the_crumbs();
 
 //... Do something with it:
 //In our case we're appending a new crumb to the crumbs array.
-array_push( $crumbs, array(
-    'slug' => 'search',
-    'url' => 'https://.../search/',
-) );
+array_push( $crumbs,
+    array(
+        'slug' => 'search',
+        'url' => 'https://.../search/',
+    )
+);
+
+//And intercept a specific crumb and modify it...
+array_walk( $crumbs, function( &$value, $key ) {
+
+    if ( 'something' == $value['slug'] ) {
+
+        $value['slug'] = 'somethingelse';
+
+    };
+
+} );
 
 $ingredients = array(
     'crumbs' => $crumbs,
