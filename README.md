@@ -120,7 +120,7 @@ array_push( $crumbs,
     )
 );
 
-//And intercept a specific crumb and modify it...
+//And intercepting a specific crumb to modify it...
 array_walk( $crumbs, function( &$value, $key ) {
 
     if ( 'something' == $value['slug'] ) {
