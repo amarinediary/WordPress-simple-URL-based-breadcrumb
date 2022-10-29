@@ -131,6 +131,7 @@ array_walk( $crumbs, function( &$value, $key ) {
 
 } );
 
+//And use it with our bread...
 $ingredients = array(
     'crumbs' => $crumbs,
 );
