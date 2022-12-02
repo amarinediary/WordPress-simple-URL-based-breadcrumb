@@ -25,6 +25,9 @@ We are looking for ideas on how the search breadcrumb should be handled (with/wi
 
 Let us know how we can improve this plugin, [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose).
 
+## Unofficial plugin ?
+Open source is a key value for us. Unofficial here means Open Source. Restricting it through the WordPress plugin store would be counterproductive. Put your hands in the engine and have fun. Star-it, Fork-it and Modify-it at your convenience.
+
 ## Table of contents
 
 - [Displaying the bread, a formatted crumbs list](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#displaying-the-bread-a-formatted-crumbs-list)
@@ -241,6 +244,6 @@ It would seems that the issue is coming from the Google Bot validation itelf and
 
 As we are reading and parsing the url, the crumbs on a localhost environement will reflect the development folder architecture. This will not be reflected on a live site. eg: `Home > Www > Wordpress > My awesome post` on a local branch, `Home > My awesome post` on a live branch.
 
-## Watch it, Star it, Fork it !
+## Watch it, Star-it, Fork-it !
 
 We made your day? Give us a star!
