@@ -151,6 +151,24 @@ if ( ! function_exists( 'get_the_crumbs' ) ) {
 
             $slug = esc_html( urldecode( $crumb ) );
 
+            $taxonomies = get_taxonomies(
+                array(
+                    'public' => true,
+                ),
+                'objects'
+            );
+
+            // Iterate through all the taxonomies.
+            foreach ($taxonomies as $taxonomy) {
+                // Check if there's a term with the given slug in the current taxonomy.
+                if ($term = get_term_by('slug', $crumb, $taxonomy->name)) {
+                    // If a matching term is found, update the slug with the actual term name.
+                    $slug = $term->name;
+                    // Break the loop since a match has been found.
+                    break;
+                }
+            }
+
             $url = esc_url( $server_scheme . '://' . $server_host . '/' . substr( implode( '/', $server_uri ), 0, strpos( implode( '/', $server_uri ), $crumb ) ) . $crumb. '/' );
 
             array_push( $crumbs, 
@@ -326,7 +344,7 @@ if ( ! function_exists( 'the_bread' ) ) {
 
                 } else {
   
-                    $title = ucfirst( str_replace( '-', ' ', $crumb['slug'] ) );
+                    $title = $crumb['slug'];
 
                 };
 
