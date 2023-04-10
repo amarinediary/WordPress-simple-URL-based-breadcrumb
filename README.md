@@ -11,9 +11,8 @@
 
 ### Latest changelog
 
-#### `1.2.2`
-- [x] Custom post types crumbs are now being displayed correctly.
-- [x] You can now intercept the crumbs array. See [Example: Intercepting the crumbs array](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb#example-intercepting-the-crumbs-array).
+#### `1.2.3`
+- [x] The crumbs fallback will output the default page/post slug.
 - [x] Code commenting improvements.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
 - [x] [README.md](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/blob/main/README.md) updates.
