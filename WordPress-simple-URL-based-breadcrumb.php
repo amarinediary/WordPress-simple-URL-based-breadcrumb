@@ -323,6 +323,8 @@ if ( ! function_exists( 'the_bread' ) ) {
 
         if ( ! empty( $crumbs ) ) {
 
+            echo '<nav aria-label="Breadcrumb">';
+
             echo '<ol class="🍞 bread" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
             $i = 0;
@@ -349,21 +351,31 @@ if ( ! function_exists( 'the_bread' ) ) {
                 };
 
                 echo '<li class="crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="' . $crumb['url'] . '">
+                    <a itemprop="item" href="' . $crumb['url'] . '"';
+
+                if ( $i === sizeof( $crumbs ) ) {
+                    echo ' aria-current="page"';
+                }
+
+                echo '>
                         <span itemprop="name">' . $title . '</span>
                     </a>
-                    <meta itemprop="position" content="' . $i . '">
-                </li>';
+                    <meta itemprop="position" content="' . $i . '">';
 
                 if ( $i !== sizeof( $crumbs ) && ! empty( $ingredients['separator'] ) ) {
 
                     echo $ingredients['separator'];
 
                 };
-    
+
+                echo '</li>';
+
+
             };
-    
+
             echo '</ol>';
+            
+            echo '</nav>';
 
         };
 
