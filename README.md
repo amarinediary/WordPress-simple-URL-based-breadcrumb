@@ -7,16 +7,25 @@
 |Requires at least WordPress:|`5.0.0`|
 |Requires at least PHP:|`7.0.0`|
 |[Tested up to WordPress:](https://wordpress.org/download/releases/)|`6.0.2`|
-|[Current plugin version:](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.2.2)|`1.2.2`|
+|[Current plugin version:](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.2.4)|`1.2.4`|
 
 ### Latest changelog
 
-#### `1.2.3`
-- [x] The crumbs fallback will output the default page/post slug.
+#### `1.2.4`
+
+`1.2.4` brings further improvements conditional logic based on the PHP version and further improvements. `1.2.4` hasn't been through any testing. Feedback for `1.2.4` is apreciated and more than welcome.
+
+[`1.2.3`](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/releases/tag/1.2.3) remains the current most stable version. 
+
+- [x] Introduced `safe_str_ends_with`. `safe_str_ends_with` uses the native PHP > 8.0.0 function when available, or falls back to the custom implementation.
+- [x] Introduced `safe_str_contains`. `safe_str_contains` uses the native PHP > 8.0.0 function when available, or falls back to the custom implementation.
+- [x] Introduced `attempt_to_retrieve_server_scheme`.
+- [x] `get_the_crumbs` was updated to use introduced functions.
+- [x] `the_bread` was updated. Improvements to how default parameters are introduced were made. The use of `extract()` saves us the trouble of writing multiple if statements.
 - [x] Code commenting improvements.
 - [x] Emphasis on [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). 
 - [x] [README.md](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/blob/main/README.md) updates.
-- Special thanks to [@nikolailehbrink](https://github.com/nikolailehbrink) for the feedback.
+- Special thanks to [@mattmacneil](https://github.com/mattmacneil) for the feedback and kind words.
 
 We are looking for ideas on how the search breadcrumb should be handled (with/without pagination) ? [Open a new issue](https://github.com/amarinediary/WordPress-simple-URL-based-breadcrumb/issues/new/choose) to share what's on your mind.
 
